@@ -1,0 +1,50 @@
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="/">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+            <li class="nav-heading">Pages</li>
+            <li class="nav-item {{ Request::is('user') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="/user">
+                    <i class="bi bi-person-square"></i>
+                    <span>User</span>
+                </a>
+            </li>
+            <!-- New Kategori Menu Item -->
+        <li class="nav-item {{ Request::is('kategori') ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="/kategori">
+                <i class="bi bi-tag-fill"></i>
+                <span>Kategori</span>
+            </a>
+        </li>
+        <!-- New Artikel Menu Item -->
+        <li class="nav-item {{ Request::is('artikel*') ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="/artikel">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Artikel</span>
+            </a>
+        </li>
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    @push('extra-js')
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var path = window.location.pathname;
+                $('.menu li a').each(function() {
+                    if ($(this).attr('href') === path) {
+                        $(this).addClass('active');
+                    }
+                });
+            });
+        </script>
+    @endpush
