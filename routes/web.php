@@ -2,11 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EventController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\NarasumberController;
-use App\Http\Controllers\ParticipantController;
-use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckRole;
@@ -16,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 
 
 // Rute untuk login, register, dan logout
+Route::redirect('/','/home');
+Route::get('/home', [LandingPageController::class, 'index'])->name('home');
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.login');
@@ -32,7 +30,7 @@ Route::group(['middleware' => ['auth', 'checkrole:1,2']], function () {
 // Route::middleware(['auth', 'checkrole:Admin'])->group(function () {
 Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
     // Tempatkan rute yang membutuhkan autentikasi di sini
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/user', [UserController::class, 'index'])->name('user');
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     Route::put('/profile/update', [UserController::class, 'updateProfile'])->name('profile.update');
@@ -54,6 +52,5 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 });
 
 Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
-    Route::get('/home', [LandingPageController::class, 'index'])->name('home');
     Route::get('/event/{id}', [LandingPageController::class, 'detail'])->name('eventLp');
 });

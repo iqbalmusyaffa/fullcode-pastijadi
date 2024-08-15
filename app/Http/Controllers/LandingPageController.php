@@ -10,12 +10,12 @@ class LandingPageController extends Controller
 {
     public function index(){
 
-        $events = Event::orderBy('created_at', 'desc')->where('is_published', 1)->limit(5)->get();
-        $speakers = Speaker::limit(4)->get();
-        return view('landingPages.index', [
-            'events' => $events,
-            'speakers' => $speakers,
-        ]);
+        // $events = Event::orderBy('created_at', 'desc')->where('is_published', 1)->limit(5)->get();
+        // $speakers = Speaker::limit(4)->get();
+        // return view('landingPages.index', [
+        //     'events' => $events,
+        //     'speakers' => $speakers,
+        // ]);
     }
 
     public function detail($id){
