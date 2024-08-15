@@ -11,7 +11,7 @@
     <p>Setelah Semua dipastikan sudah benar konfigurasinya maka jalankan projek ini, jika terdapt error dapat dipastikan konfigurasi tidak dilakukan dengan benar</p>
 
 
-wajib setting env 
+<p>wajib setting env 
 
 APP_NAME=Laravel
 APP_ENV=local
@@ -84,6 +84,6 @@ php artisan storage:link
 ini untuk fungsi appkey generate
 
 php artisan key:generate
-
+</p>
 
 
