@@ -3,8 +3,8 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
 
-            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
-                <a class="nav-link collapsed" href="/">
+            <li class="nav-item {{ Request::is('/dashboard') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="/dashboard">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
