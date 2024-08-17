@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
+use App\Models\KategoriService;
 
 class ServiceController extends Controller
 {
@@ -11,7 +13,15 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        // Fetch services with their categories
+        $services = Service::with('category')->get();
+        $service_categories = KategoriService::all();
+
+        return view('pages.services.index', [
+            'title' => 'Service',
+            'services' => $services,
+            'service_categories' => $service_categories
+        ]);
     }
 
     /**
@@ -19,7 +29,9 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.services.create', [
+            'title' => 'Create Service'
+        ]);
     }
 
     /**
@@ -27,15 +39,21 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'nama_services' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'service_categories_id' => 'required|exists:service_categories,id',
+            'price' => 'required|integer',
+        ],
+        [
+            'nama_services.required' => 'Nama Service wajib diisi',
+            'deskripsi.required' => 'Deskripsi wajib diisi',
+            'service_categories_id.required' => 'Kategori Service wajib diisi',
+            'price.required' => 'Harga wajib diisi',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        Service::create($request->all());
+        return redirect()->route('services')->with('success', 'Service berhasil ditambahkan');
     }
 
     /**
@@ -43,7 +61,11 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $service = Service::findOrFail($id);
+        return view('pages.services.edit', [
+            'title' => 'Edit Service',
+            'service' => $service
+        ]);
     }
 
     /**
@@ -51,7 +73,21 @@ class ServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama_services' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'service_categories_id' => 'required|exists:service_categories,id',
+            'price' => 'required|integer',
+        ],
+        [
+            'nama_services.required' => 'Nama Service wajib diisi',
+            'deskripsi.required' => 'Deskripsi wajib diisi',
+            'service_categories_id.required' => 'Kategori Service wajib diisi',
+            'price.required' => 'Harga wajib diisi',
+        ]);
+
+        Service::findOrFail($id)->update($request->all());
+        return redirect()->route('services')->with('success', 'Service berhasil diupdate');
     }
 
     /**
@@ -59,6 +95,7 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Service::findOrFail($id)->delete();
+        return redirect()->route('services')->with('success', 'Service berhasil dihapus');
     }
 }

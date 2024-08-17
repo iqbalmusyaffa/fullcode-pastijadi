@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ServiceCategory;
+use App\Models\KategoriService;
 class KategoriServiceController extends Controller
 {
     /**
@@ -11,7 +11,7 @@ class KategoriServiceController extends Controller
      */
     public function index()
     {
-        $service_categories = ServiceCategory::all();
+        $service_categories = KategoriService::all();
         return view('pages.kategori-service.index', [
             'title' => 'Kategori Service',
             'service_categories' => $service_categories
@@ -39,7 +39,7 @@ class KategoriServiceController extends Controller
             'deskripsi' => 'required|string',
         ]);
 
-        ServiceCategory::create($request->all());
+        KategoriService::create($request->all());
         return redirect()->route('kategori-service')->with('success', 'Kategori Service berhasil ditambahkan');
     }
 
@@ -56,7 +56,7 @@ class KategoriServiceController extends Controller
      */
     public function edit(string $id)
     {
-        $service_categori= ServiceCategory::findOrFail($id);
+        $service_categori= KategoriService::findOrFail($id);
         return view('pages.kategori-service.edit', [
             'title' => 'Edit Kategori Service',
             'service_categori' => $service_categori
@@ -74,7 +74,7 @@ class KategoriServiceController extends Controller
             'deskripsi' => 'required|string',
         ]);
 
-        $service_categori = ServiceCategory::findOrFail($id);
+        $service_categori = KategoriService::findOrFail($id);
         $service_categori->update($request->all());
         return redirect()->route('kategori-service')->with('success', 'Kategori Service berhasil diupdate');
     }
@@ -84,7 +84,7 @@ class KategoriServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        ServiceCategory::find($id)->delete();
+        KategoriService::find($id)->delete();
         return redirect()->route('kategori-service')->with('success', 'Kategori berhasil dihapus');
     }
 }
