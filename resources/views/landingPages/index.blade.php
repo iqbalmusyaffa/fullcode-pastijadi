@@ -65,7 +65,7 @@
                     <a class="nav-link text-warning fw-bold" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fw-bold" href="#">About</a>
+                    <a class="nav-link text-white fw-bold" href="{{route('about.index') }}">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white fw-bold" href="#">Artikel</a>

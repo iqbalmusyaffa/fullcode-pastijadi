@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
@@ -54,3 +55,5 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
     Route::get('/event/{id}', [LandingPageController::class, 'detail'])->name('eventLp');
 });
+
+Route::resource('about', AboutController::class);
