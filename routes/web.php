@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
@@ -59,7 +60,7 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
    Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
    Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
 });
-
+Route::resource('about', AboutController::class);
 // Service Routes
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::post('/services/create', [ServiceController::class, 'store'])->name('services.create');
