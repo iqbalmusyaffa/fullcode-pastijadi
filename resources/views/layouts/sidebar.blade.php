@@ -18,12 +18,26 @@
                 </a>
             </li>
             <!-- New Kategori Menu Item -->
-        <li class="nav-item {{ Request::is('kategori') ? 'active' : '' }}">
-            <a class="nav-link collapsed" href="/kategori">
+        <li class="nav-item {{ Request::is('kategori-service') ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="/kategori-service">
                 <i class="bi bi-tag-fill"></i>
-                <span>Kategori</span>
+                <span>Kategori Service</span>
             </a>
         </li>
+        <!-- New Kategori Menu Item -->
+        <li class="nav-item {{ Request::is('service') ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="/services">
+                <i class="bi bi-tag-fill"></i>
+                <span>Service</span>
+            </a>
+        </li>
+        <!-- New Kategori Menu Item -->
+            <li class="nav-item {{ Request::is('kategori') ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="/kategori">
+                    <i class="bi bi-tag-fill"></i>
+                    <span>Kategori</span>
+                </a>
+            </li>
         <!-- New Artikel Menu Item -->
         <li class="nav-item {{ Request::is('artikel*') ? 'active' : '' }}">
             <a class="nav-link collapsed" href="/artikel">
