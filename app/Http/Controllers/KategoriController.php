@@ -37,6 +37,11 @@ class KategoriController extends Controller
             'nama_kategori' => 'required|string|max:255',
             'kode_kategori' => 'required|string|max:255',
             'deskripsi' => 'required|string',
+        ],
+            [
+                'nama_kategori.required' => 'Nama Kategori wajib diisi',
+                'kode_kategori.required' => 'Kode Kategori wajib diisi',
+                'deskripsi.required' => 'Deskripsi wajib diisi',
         ]);
 
         Kategori::create($request->all());
@@ -72,6 +77,11 @@ class KategoriController extends Controller
             'nama_kategori' => 'required|string|max:255',
             'kode_kategori' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
+        ],
+        [
+            'nama_kategori.required' => 'Nama Kategori wajib diisi',
+            'kode_kategori.required' => 'Kode Kategori wajib diisi',
+            'deskripsi.required' => 'Deskripsi wajib diisi',
         ]);
 
         Kategori::find($id)->update($request->all());

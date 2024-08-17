@@ -48,6 +48,12 @@ class ArtikelController extends Controller
             'description' => 'required|string',
             'categories_id' => 'required|exists:categories,id',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
+        ],
+        [
+            'title.required' => 'Judul Artikel wajib diisi',
+            'description.required' => 'Deskripsi wajib diisi',
+            'categories_id.required' => 'Kategori wajib diisi',
+            'image.required' => 'Gambar wajib diisi',
         ]);
 
         // Handle the file upload
@@ -103,6 +109,12 @@ class ArtikelController extends Controller
             'description' => 'required|string',
             'categories_id' => 'required|exists:categories,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
+        ],
+        [
+            'title.required' => 'Judul Artikel wajib diisi',
+            'description.required' => 'Deskripsi wajib diisi',
+            'categories_id.required' => 'Kategori wajib diisi',
+            'image.required' => 'Gambar wajib diisi',
         ]);
 
         // Find the article
