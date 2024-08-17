@@ -40,16 +40,16 @@
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                @forelse ($categories as $i => $category)
+                                @forelse ($service_categories as $i => $service_category)
                                     <tr>
                                         <th scope="row">{{ ++$i }}</th>
-                                        <td>{{ $category->nama_kategori }}</td>
-                                        <td>{{ $category->kode_kategori }}</td>
-                                        <td>{{ $category->deskripsi }}</td>
+                                        <td>{{ $service_category->nama_kategori }}</td>
+                                        <td>{{ $service_category->kode_kategori }}</td>
+                                        <td>{{ $service_category->deskripsi }}</td>
                                         <td>
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('kategori.delete', $category->id) }}" method="POST">
-                                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editCategory{{ $category->id }}"><i class="bi bi-pencil-square"></i></button>
-                                                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#showCategory{{ $category->id }}"><i class="bi bi-eye-fill"></i></button>
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('kategori-service.delete', $service_category->id) }}" method="POST">
+                                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editCategory{{ $service_category->id }}"><i class="bi bi-pencil-square"></i></button>
+                                                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#showCategory{{ $service_category->id }}"><i class="bi bi-eye-fill"></i></button>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></button>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="card-body">
-                        <form class="row g-3" method="POST" action="{{ route('kategori.create') }}">
+                        <form class="row g-3" method="POST" action="{{ route('kategori-service.create') }}">
                             @csrf
                             <div class="col-md-6">
                                 <label for="nama_kategori" class="form-label">Nama Kategori Services</label>
@@ -117,8 +117,8 @@
     </div>
 
     {{-- Modal Update Category --}}
-    @foreach ($categories as $category)
-        <div class="modal fade" id="editCategory{{ $category->id }}" tabindex="-1">
+    @foreach ($service_categories as $service_category)
+        <div class="modal fade" id="editCategory{{ $service_category->id }}" tabindex="-1">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -127,26 +127,26 @@
                     </div>
                     <div class="modal-body">
                         <div class="card-body">
-                            <form class="row g-3" method="POST" action="{{ route('kategori.update', $category->id) }}">
+                            <form class="row g-3" method="POST" action="{{ route('kategori.update', $service_category->id) }}">
                                 @csrf
                                 @method('PUT')
                                 <div class="col-md-6">
                                     <label for="nama_kategori" class="form-label">Nama Kategori Services</label>
-                                    <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="{{ old('nama_kategori', $category->nama_kategori) }}">
+                                    <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" value="{{ old('nama_kategori', $service_category->nama_kategori) }}">
                                     @error('nama_kategori')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <label for="kode_kategori" class="form-label">Kode Kategori Services</label>
-                                    <input type="text" class="form-control" id="kode_kategori" name="kode_kategori" value="{{ old('kode_kategori', $category->kode_kategori) }}">
+                                    <input type="text" class="form-control" id="kode_kategori" name="kode_kategori" value="{{ old('kode_kategori', $service_category->kode_kategori) }}">
                                     @error('kode_kategori')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="col-md-12">
                                     <label for="deskripsi" class="form-label">Deskripsi Services</label>
-                                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3">{{ old('deskripsi', $category->deskripsi) }}</textarea>
+                                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3">{{ old('deskripsi', $service_category->deskripsi) }}</textarea>
                                     @error('deskripsi')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -166,8 +166,8 @@
     @endforeach
 
     {{-- Modal Show Category --}}
-    @foreach ($categories as $category)
-        <div class="modal fade" id="showCategory{{ $category->id }}" tabindex="-1">
+    @foreach ($service_categories as $service_category)
+        <div class="modal fade" id="showCategory{{ $service_category->id }}" tabindex="-1">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -179,15 +179,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <strong>Nama Kategori Services:</strong>
-                                    <p>{{ $category->nama_kategori }}</p>
+                                    <p>{{ $service_category->nama_kategori }}</p>
                                 </div>
                                 <div class="col-md-6">
                                     <strong>Kode Kategori Services:</strong>
-                                    <p>{{ $category->kode_kategori }}</p>
+                                    <p>{{ $service_category->kode_kategori }}</p>
                                 </div>
                                 <div class="col-md-12">
                                     <strong>Deskripsi Services:</strong>
-                                    <p>{{ $category->deskripsi }}</p>
+                                    <p>{{ $service_category->deskripsi }}</p>
                                 </div>
                             </div>
                         </div>
