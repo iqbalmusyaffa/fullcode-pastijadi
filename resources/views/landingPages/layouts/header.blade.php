@@ -29,6 +29,11 @@
     <link href="{{ asset('assetsFe/css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <style>
+          .bg-gradient-header {
+              background: linear-gradient(155deg, #142C30 0%, #4EA1AD 100%);
+          }
+      </style>
 </head>
 
 <body>
@@ -70,35 +75,43 @@
             </nav>
         </div>
     </header> --}}
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light custom-navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="40" height="40">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Artikel</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Service</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            </ul>
-            <button class="btn btn-login">LOGIN</button>
-          </div>
-        </div>
-      </nav>
+    <header class="bg-gradient-header py-3">
+      <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+              <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="70" height="70">
+            </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="#">About</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Artikel</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Service</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Blog</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="btn btn-outline-warning" href="#">LOGIN</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </div>
+  </header>
 
     <!-- End Header -->
+
