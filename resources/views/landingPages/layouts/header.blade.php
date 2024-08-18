@@ -37,44 +37,6 @@
 </head>
 
 <body>
-    <!-- ======= Header ======= -->
-    {{-- <header id="header" class="fixed-top ">
-        <div class="container d-flex align-items-center">
-            <h1 class="logo me-auto"><a href="/home"><img src="{{ asset('assetsFe/img/hero-image.png') }}"
-                        alt="Logo" class="img-fluid"></a></h1>
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto {{ Request::is('home') ? 'active' : '' }}" href="/home">Home</a>
-                    </li>
-                    <li><a class="nav-link scrollto {{ Request::is('about') ? 'active' : '' }}"
-                            href="/home#about">About</a></li>
-                    <li><a class="nav-link scrollto {{ Request::is('services') ? 'active' : '' }}"
-                            href="/home#services">Services</a></li>
-                    <li><a class="nav-link scrollto {{ Request::is('team') ? 'active' : '' }}"
-                            href="/home#team">Speakers</a></li>
-                    <li><a class="nav-link scrollto {{ Request::is('event*') ? 'active' : '' }}"
-                            href="#event">Event</a></li>
-                    <li><a class="nav-link scrollto {{ Request::is('contact') ? 'active' : '' }}"
-                            href="/home#contact">Contact</a></li>
-                     @guest
-                    <li><button class="login-btn">Login</button></li>
-                    @endguest
-                    @auth
-                    <li>
-                        <form action="{{ route('auth.logout') }}" method="POST">
-                            @csrf
-                            <button class="dropdown-item mx-3 align-items-center text-dark" style="color: #000;" type="submit">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
-                            </button>
-                        </form>
-                    </li>
-                    @endauth
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-        </div>
-    </header> --}}
     <header class="bg-gradient-header py-3">
       <div class="container">
           <nav class="navbar navbar-expand-lg navbar-dark">
@@ -112,6 +74,4 @@
           </nav>
       </div>
   </header>
-
-    <!-- End Header -->
 
