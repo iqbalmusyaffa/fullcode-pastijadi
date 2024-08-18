@@ -70,7 +70,7 @@
             </nav>
         </div>
     </header> --}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light custom-navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="40" height="40">
