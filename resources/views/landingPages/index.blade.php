@@ -39,8 +39,8 @@
                             <div style="width: 9.47px; height: 9.08px; left: 23.52px; top: 18.15px;"></div>
                             <div style="width: 38.48px; height: 32.25px; left: 2.24px; top: 1.88px;"></div>
                         </div>
-                        <img src="https://via.placeholder.com/180x177" alt="Company Logo" class="img-fluid mb-3" style="max-width: 180.32px; height: auto;">
-                        <h1 class="text-warning fw-bold" style="font-size: 2rem; font-family: Montserrat; line-height: 1.2;">
+                        <img src="{{ asset('assetsFe/img/logo.png') }}" class="img-fluid mb-3" style="max-width: 180.32px; height: 150px;">
+                        <h1 style="color: #FDB600; font-size: 2rem; font-family: Inter; font-weight: 600; word-wrap: break-word"">
                             Digital Business<br/>Transformation Solutions.
                         </h1>
                     </div>
@@ -229,29 +229,4 @@
   </div>
 
 <!-- Footer -->
-<div class="bg-gradient-green py-5">
-    <div class="container">
-        <div class="row gy-4">
-            <div class="col-md-3">
-                <img src="https://via.placeholder.com/122x118" alt="Logo" class="img-fluid mb-3">
-                <p class="text-white fs-4">Digital Business<br/>Transformation Solutions.</p>
-            </div>
-            <div class="col-md-3">
-                <h5 class="text-white fw-bold mb-3">Headquarters</h5>
-                <p class="text-white">Lippo Thamrin Lt.5 #0503<br/>Jl. M.H.Thamrin No.20, Menteng<br/>Jakarta Pusat 10350, Indonesia</p>
-            </div>
-            <div class="col-md-3">
-                <h5 class="text-white fw-bold mb-3">Support</h5>
-                <p class="text-white">Privacy Policy<br/>Term and Conditions</p>
-            </div>
-            <div class="col-md-3">
-                <h5 class="text-white fw-bold mb-3">Connect With Us</h5>
-                <div class="d-flex flex-wrap">
-                    <div class="bg-white rounded-circle me-2 mb-2" style="width: 36px; height: 36px;"></div>
-                    <div class="bg-white rounded-circle me-2 mb-2" style="width: 36px; height: 36px;"></div>
-                    <div class="bg-white rounded-circle me-2 mb-2" style="width: 36px; height: 36px;"></div>
-                    <div class="bg-white rounded-circle me-2 mb-2" style="width: 36px; height: 36px;"></div>
-
-    </div>
-</div>
 @include('landingPages.layouts.footer')
