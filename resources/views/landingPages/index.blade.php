@@ -206,9 +206,9 @@
                         <img src="{{ Storage::url('images/'.$article->image) }}" class="card-img-top" alt="{{ $article->title }}" style="border-radius: 11px;">
                         <div class="card-body">
                             <h5 class="card-title" style="color: #152E32; font-size: 19.75px; font-family: 'DM Sans', sans-serif; font-weight: 700;">{{ $article->title }}</h5>
-                            <p class="card-text text-end" style="color: #152D31; font-size: 13px; font-family: 'DM Sans', sans-serif; font-weight: 500;">{{ $article->description }}</p>
+                            <p class="card-text" style="color: #152D31; font-size: 13px; font-family: 'DM Sans', sans-serif; font-weight: 500;">{{ $article->description }}</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="badge bg-light text-dark border border-dark" style="font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">{{ $article->categories->name }}</span>
+                                <span class="badge bg-light text-dark border border-dark" style="font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">{{ $article->categories->nama_kategori }}</span>
                                 <span style="color: #152F33; font-size: 15px; font-family: 'DM Sans', sans-serif; font-weight: 500;">Baca Selengkapnya</span>
                             </div>
                             <a href="{{ route('artikel.show', $article->id) }}" class="btn btn-sm text-white mt-3" style="background: #152E32; border-radius: 109px; font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">Selengkapnya</a>
