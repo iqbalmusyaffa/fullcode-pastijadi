@@ -39,3 +39,43 @@
     background-color: #f76c5e;
     border-radius: 50%;
 }
+.custom-navbar {
+    background: linear-gradient(0deg, #142C30 0%, #2A575E 100%);
+}
+.nav-link {
+    color: white !important;
+}
+.nav-link:hover {
+    color: orange !important;
+}
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler-icon {
+    background-color: white;
+}
+.btn-login {
+    background-color: transparent;
+    border: 2px solid orange;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.btn-login:hover {
+    background-color: orange;
+    color: white;
+}
+.custom-navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.custom-navbar .navbar-nav {
+    display: flex;
+    align-items: center;
+}

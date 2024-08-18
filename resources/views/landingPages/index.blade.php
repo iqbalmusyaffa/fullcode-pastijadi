@@ -1,89 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pastijadi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .bg-gradient-orange {
-            background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%);
-        }
-        .bg-gradient-green {
-            background: linear-gradient(135deg, #142C30 0%, #2A575E 100%);
-        }
-        .bg-gradient-header {
-            background: linear-gradient(155deg, #142C30 0%, #4EA1AD 100%);
-        }
-        @media (max-width: 768px) {
-            .position-absolute {
-                position: static !important;
-            }
-            .rounded-circle {
-                display: none;
-            }
-            .navbar {
-                position: static !important;
-            }
-            .navbar-collapse {
-                background-color: rgba(20, 44, 48, 0.9);
-                padding: 1rem;
-            }
-            .navbar-nav {
-                align-items: flex-start !important;
-            }
-            .nav-item {
-                margin-bottom: 0.5rem;
-            }
-            h1, h2 {
-                font-size: 1.8rem !important;
-            }
-            .btn {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
-            .col-lg-6 {
-                margin-bottom: 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<!-- Header -->
-<nav class="navbar navbar-expand-lg bg-gradient-header w-100 position-relative" style="min-height: 100px;">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="https://via.placeholder.com/63x63" alt="Logo" width="63" height="63">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link text-warning fw-bold" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold" href="{{route('about.index') }}">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold" href="#">Artikel</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold" href="#">Service</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white fw-bold" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-warning fw-bold" href="#">LOGIN</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+@include('landingPages.layouts.header')
 <div class="container-fluid p-0">
     <div class="position-relative">
         <!-- Orange Circle -->
@@ -335,7 +250,4 @@
 
     </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+@include('landingPages.layouts.footer')
