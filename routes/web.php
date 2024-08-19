@@ -9,14 +9,21 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckRole;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KategoriServiceController;
-use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\BlogsController;
 use Illuminate\Support\Facades\Route;
 
 
 // Rute untuk login, register, dan logout
 Route::redirect('/','/home');
 Route::get('/home', [LandingPageController::class, 'index'])->name('home');
+Route::resource('about', AboutController::class);
+Route::resource('servicesfe', ServicesController::class);
+// Route::get('services/{id}', [ServicesController::class, 'show'])->name('services.show');
+
+Route::resource('blogfe', BlogsController::class);
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.login');
@@ -54,13 +61,14 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
 
     // Artikel Routes
    // List all articles
-   Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
-   Route::post('/artikel/create', [ArtikelController::class, 'store'])->name('artikel.create');
-   Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('artikel.update');
-   Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
-   Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
+   Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::post('/blog/create', [BlogController::class, 'store'])->name('blog.create');
+Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+
 });
-Route::resource('about', AboutController::class);
+
 // Service Routes
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::post('/services/create', [ServiceController::class, 'store'])->name('services.create');

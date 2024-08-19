@@ -39,10 +39,10 @@
                 </a>
             </li>
         <!-- New Artikel Menu Item -->
-        <li class="nav-item {{ Request::is('artikel*') ? 'active' : '' }}">
-            <a class="nav-link collapsed" href="/artikel">
+        <li class="nav-item {{ Request::is('blog*') ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="/blog">
                 <i class="bi bi-file-earmark-text"></i>
-                <span>Artikel</span>
+                <span>Blog</span>
             </a>
         </li>
         </ul>

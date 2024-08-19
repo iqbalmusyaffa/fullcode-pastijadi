@@ -41,6 +41,6 @@ class KategoriService extends Model
      */
     public function services()
     {
-        return $this->hasMany(Service::class, 'service_categories_id');
+        return $this->hasMany(Service::class);
     }
 }
