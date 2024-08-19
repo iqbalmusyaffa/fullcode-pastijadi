@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->foreignId('categories_id')->constrained('categories');
-            $table->string('image');
-            $table->timestamps();
+            $table->string('title'); // Judul artikel
+            $table->text('description')->nullable(); // Deskripsi artikel
+            $table->foreignId('categories_id')->constrained('categories'); // Kategori artikel
+            $table->foreignId('user_id')->constrained('users'); // Referensi ke tabel users
+            $table->string('image'); // URL gambar
+            $table->timestamp('published_at')->nullable(); // Tanggal publikasi
+            $table->integer('read_time')->nullable(); // Perkiraan waktu baca (dalam menit)
+            $table->timestamps(); // Timestamp untuk created_at dan updated_at
         });
     }
 

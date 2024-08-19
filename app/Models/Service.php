@@ -23,6 +23,7 @@ class Service extends Model
     protected $fillable = [
         'nama_services',
         'deskripsi',
+        'image',
         'service_categories_id',
         'price',
     ];
@@ -30,7 +31,7 @@ class Service extends Model
     /**
      * Get the category that owns the service.
      */
-    public function category()
+     public function serviceCategory()
     {
         return $this->belongsTo(KategoriService::class, 'service_categories_id');
     }
