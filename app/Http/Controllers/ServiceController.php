@@ -44,7 +44,7 @@ class ServiceController extends Controller
         'deskripsi' => 'required|string',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
         'service_categories_id' => 'required|exists:service_categories,id',
-        'price' => 'required|integer',
+        'price' => 'required|numeric', // Allow numeric values (including decimals)
     ],
     [
         'nama_services.required' => 'Nama Service wajib diisi',
@@ -52,6 +52,8 @@ class ServiceController extends Controller
         'image.required' => 'Gambar wajib diisi',
         'service_categories_id.required' => 'Kategori Service wajib diisi',
         'price.required' => 'Harga wajib diisi',
+        'price.numeric' => 'Harga harus berupa angka', // Custom message for numeric validation
+
     ]);
 
     // Handle the image upload
@@ -94,13 +96,14 @@ class ServiceController extends Controller
         'deskripsi' => 'required|string',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
         'service_categories_id' => 'required|exists:service_categories,id',
-        'price' => 'required|integer',
+        'price' => 'required|numeric', // Allow numeric values (including decimals)
     ],
     [
         'nama_services.required' => 'Nama Service wajib diisi',
         'deskripsi.required' => 'Deskripsi wajib diisi',
         'service_categories_id.required' => 'Kategori Service wajib diisi',
         'price.required' => 'Harga wajib diisi',
+        'price.numeric' => 'Harga harus berupa angka', // Custom message for numeric validation
     ]);
 
     $service = Service::findOrFail($id);

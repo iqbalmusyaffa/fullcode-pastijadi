@@ -265,7 +265,7 @@
                           KAMI MENAWARKAN<br/>LAYANAN PENGEMBANGAN WEBSITE KUSTOM<br/>LAYANAN<br/>
                           <span class="text-secondary fs-4 fw-normal">Solusi Transformasi Bisnis Digital</span>
                       </h1>
-                      <a href="#" class="btn bg-gradient-orange text-white fw-bold mt-4 rounded-4 px-4 py-2">Selengkapnya</a>
+                      <a href="{{ route('about.index') }}" class="btn bg-gradient-orange text-white fw-bold mt-4 rounded-4 px-4 py-2">Selengkapnya</a>
                   </div>
                   <div class="col-lg-6 text-center">
                       <img src="{{ asset('assetsFe/img/frame/logo1.png') }}" alt="Gambar" class="img-fluid">
@@ -347,7 +347,7 @@
                             @endforeach
                         </div>
                         <div class="d-flex align-items-start justify-content-start mt-4">
-                            <a href="#" class="btn btn-lg text-white fw-bold" style="background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; font-family: Montserrat, sans-serif;">Selengkapnya</a>
+                            <a href="{{ route('servicesfe.index') }}" class="btn btn-lg text-white fw-bold" style="background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; font-family: Montserrat, sans-serif;">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
