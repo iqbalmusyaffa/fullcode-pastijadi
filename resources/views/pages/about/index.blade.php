@@ -106,10 +106,10 @@
                         <a class="nav-link text-white fw-bold" href="{{ route('servicesfe.index') }}">Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="#">Contact</a>
+                        <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-warning fw-bold" href="#">LOGIN</a>
+                        <a class="btn btn-outline-warning fw-bold" href="{{ route('login') }}">LOGIN</a>
                     </li>
                 </ul>
             </div>
@@ -124,7 +124,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="bg-gradient-custom rounded-4 p-4">
-                                <img src="{{ asset('assetsFe/img/logo.png') }}" alt="About Image" class="img-fluid rounded-3" style="width: 332px; height: 354px;">
+                                <img src="{{ asset('assetsFe/img/frame/logopastijadi1.png') }}" alt="About Image" class="img-fluid rounded-3" style="width: 332px; height: 354px;">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -375,7 +375,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="card team-card">
                                 <div class="card-body">
-                                    <img src="https://via.placeholder.com/150" alt="William Anderson">
+                                    <img src="{{ asset('assetsFe/img/team/team-1.jpg') }}" alt="William Anderson">
                                     <h5 class="mt-3">William Anderson</h5>
                                     <p class="text-muted">CTO</p>
                                     <p>Quisquam facilis cum velit laborum corrupti.</p>
@@ -391,7 +391,7 @@
                         <div class="col-md-6 mb-4">
                             <div class="card team-card">
                                 <div class="card-body">
-                                    <img src="https://via.placeholder.com/150" alt="Amanda Jepson">
+                                    <img src="{{ asset('assetsFe/img/team/team-2.jpg') }}" alt="Amanda Jepson">
                                     <h5 class="mt-3">Amanda Jepson</h5>
                                     <p class="text-muted">Accountant</p>
                                     <p>Dolorem tempora officia dicta laborum officiis.</p>

@@ -172,36 +172,53 @@
 }
 
 
-        @media (max-width: 768px) {
-            .position-absolute {
-                position: static !important;
-            }
-            .rounded-circle {
-                display: none;
-            }
-            .navbar {
-                position: static !important;
-            }
-            .navbar-collapse {
-                background-color: rgba(20, 44, 48, 0.9);
-                padding: 1rem;
-            }
-            .navbar-nav {
-                align-items: flex-start !important;
-            }
-            .nav-item {
-                margin-bottom: 0.5rem;
-            }
-            h1, h2 {
-                font-size: 1.8rem !important;
-            }
-            .btn {
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-            }
-            .col-lg-6 {
-                margin-bottom: 2rem;
-            }
+@media (max-width: 768px) {
+    .position-absolute {
+        position: static !important;
+    }
+    .rounded-circle {
+        display: none;
+    }
+    .navbar {
+        position: static !important;
+    }
+    .navbar-collapse {
+        background-color: rgba(20, 44, 48, 0.9);
+        padding: 1rem;
+    }
+    .navbar-nav {
+        align-items: flex-start !important;
+    }
+    .nav-item {
+        margin-bottom: 0.5rem;
+    }
+    h1, h2 {
+        font-size: 1.8rem !important;
+    }
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    .col-lg-6 {
+        margin-bottom: 2rem;
+    }
+    /* Additional styles from previous version */
+    .text-warning,
+    .text-white {
+        text-align: center;
+    }
+    .img-fluid {
+        margin: 0 auto;
+    }
+    .py-5 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .position-relative {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
         }
     </style>
 </head>
@@ -230,10 +247,10 @@
                     <a class="nav-link text-white fw-bold" href="{{ route('servicesfe.index') }}">Service</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white fw-bold" href="#">Contact</a>
+                    <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-warning fw-bold" href="#">LOGIN</a>
+                    <a class="btn btn-outline-warning fw-bold" href="{{ route('login') }}">LOGIN</a>
                 </li>
             </ul>
         </div>
@@ -270,7 +287,7 @@
                             <div style="width: 9.47px; height: 9.08px; left: 23.52px; top: 18.15px;"></div>
                             <div style="width: 38.48px; height: 32.25px; left: 2.24px; top: 1.88px;"></div>
                         </div>
-                        <img src="https://via.placeholder.com/180x177" alt="Company Logo" class="img-fluid mb-3" style="max-width: 180.32px; height: auto;">
+                        <img src="{{ asset('assetsFe/img/frame/logopastijadi1.png') }}" alt="Company Logo" class="img-fluid mb-3" style="max-width: 180.32px; height: auto;">
                         <h1 class="text-warning fw-bold" style="font-size: 2rem; font-family: Montserrat; line-height: 1.2;">
                             Digital Business<br/>Transformation Solutions.
                         </h1>
@@ -441,25 +458,74 @@
         </div>
     </div>
 </div>
+<form action="{{ route('home') }}" method="GET" class="mb-3">
+    <div class="row g-0">
+        <!-- Category Filter -->
+        <div class="col-12 col-md-4 mb-2 mb-md-0">
+            <select name="category" class="form-select">
+                <option value="">Select Category</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                        {{ $category->nama_kategori }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <!-- Author Filter -->
+        <div class="col-12 col-md-4 mb-2 mb-md-0">
+            <select name="author" class="form-select">
+                <option value="">Select Author</option>
+                @foreach($authors as $author)
+                    <option value="{{ $author->id }}" {{ request('author') == $author->id ? 'selected' : '' }}>
+                        {{ $author->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <!-- Filter Button -->
+        <div class="col-12 col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+        </div>
+    </div>
+</form>
+
+
+
+  <!-- Container to center and align content -->
+    <!-- Filter Form -->
+
+<!-- Blog Posts -->
 <div class="blog">
-  <div class="row mt-4">
-      <div class="d-flex flex-wrap justify-content-center gap-4">
-          <div class="card" style="width: 270px;">
-              <img src="https://via.placeholder.com/248x223" class="card-img-top" alt="Placeholder">
-              <div class="card-body">
-                  <h5 class="card-title">Kisah Nabih Nuh</h5>
-                  <div class="d-flex align-items-center mt-4">
-                      <img src="https://via.placeholder.com/57x57" class="rounded-circle mr-3" alt="Author Image">
-                      <div>
-                          <p class="mb-0 font-weight-bold">Dasteen</p>
-                          <p class="mb-0 text-muted">Jan 10, 2022 ∙ 3 min read</p>
-                      </div>
-                  </div>
-                  <a href="#" class="btn btn-sm text-white mt-3 btn-custom">Selengkapnya</a>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="row mt-4">
+        <div class="d-flex flex-wrap justify-content-center gap-4">
+            @foreach ($blogs as $blog)
+            <div class="card" style="width: 270px;">
+                <img src="{{ asset('storage/images/' . $blog->image) }}" class="card-img-top" alt="{{ $blog->title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $blog->title }}</h5>
+                    <!-- Category Badge -->
+                    <span class="badge bg-light text-dark border border-dark" style="font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">
+                        {{ $blog->categories->nama_kategori }}
+                    </span>
+                    <div class="d-flex align-items-center mt-4">
+                        <img src="{{ $blog->user->profile ? asset('/storage/users/' . $blog->user->profile) : 'https://via.placeholder.com/57x57' }}" class="rounded-circle me-3" alt="{{ $blog->user->name }}" width="57" height="57">
+                        <div>
+                            <p class="mb-0 fw-bold">{{ $blog->user->name }}</p>
+                            <p class="mb-0 text-muted">{{ $blog->created_at->format('M d, Y') }} ∙ {{ $blog->read_time }} min read</p>
+                        </div>
+                    </div>
+                    <a href="{{ route('blog.show', $blog->id) }}" class="btn btn-sm text-white mt-3 btn-custom">Selengkapnya</a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+
+
 
   {{-- <div class="trending-header">Trending</div>
 
