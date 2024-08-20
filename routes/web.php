@@ -13,6 +13,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,7 +23,7 @@ Route::get('/home', [LandingPageController::class, 'index'])->name('home');
 Route::resource('about', AboutController::class);
 Route::resource('servicesfe', ServicesController::class);
 // Route::get('services/{id}', [ServicesController::class, 'show'])->name('services.show');
-
+Route::resource('contact', ContactController::class);
 Route::resource('blogfe', BlogsController::class);
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
