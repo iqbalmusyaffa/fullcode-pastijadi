@@ -82,8 +82,67 @@
                 <p>"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure
         </article> --}}
     </main>
+    <form action="{{ route('blogfe.index') }}" method="GET" class="mb-3">
+        <div class="row g-0">
+            <!-- Category Filter -->
+            <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <select name="category" class="form-select">
+                    <option value="">Select Category</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                            {{ $category->nama_kategori }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
 
+            <!-- Author Filter -->
+            <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <select name="author" class="form-select">
+                    <option value="">Select Author</option>
+                    @foreach($authors as $author)
+                        <option value="{{ $author->id }}" {{ request('author') == $author->id ? 'selected' : '' }}>
+                            {{ $author->name }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <!-- Filter Button -->
+            <div class="col-12 col-md-4 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100">Filter</button>
+            </div>
+        </div>
+    </form>
     <section class="container my-5">
+        <h3 class="mb-4">Related Blogs</h3>
+        <div class="row">
+            @foreach($blogs as $blog)
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="{{ Storage::url('images/' . $blog->image) }}" class="card-img-top" alt="Blog image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $blog->title }}</h5>
+                        <span class="badge bg-light text-dark border border-dark" style="font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">
+                            {{ $blog->categories->nama_kategori }}
+                        </span>
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="{{ $blog->user->profile ? asset('/storage/users/' . $blog->user->profile) : 'https://via.placeholder.com/57x57' }}" class="rounded-circle me-3" alt="{{ $blog->user->name }}" width="57" height="57">
+                            <div>
+                                <p class="mb-0 fw-bold">{{ $blog->user->name }}</p>
+                                <small class="text-muted">{{ $blog->published_at->format('M d, Y') }} • {{ $blog->read_time }} min read</small>
+                            </div>
+                        </div>
+                        <!-- Add a Read More button here -->
+                        <a href="#" class="btn btn-primary mt-3">Read More</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </section>
+
+    {{-- <section class="container my-5">
         <h3 class="mb-4">Related Articles</h3>
         <div class="row">
             <div class="col-md-4 mb-4">
@@ -132,7 +191,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- <section class="container my-5">
         <h3 class="mb-4">Trending</h3>
