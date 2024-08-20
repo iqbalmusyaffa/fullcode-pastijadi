@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,75 +12,84 @@
         .bg-gradient-custom {
             background: linear-gradient(135deg, #152D31 0%, #20444A 46%, #2A575E 100%);
         }
+
         .bg-gradient-header {
             background: linear-gradient(135deg, #333 0%, #555 100%);
         }
+
         .bg-gradient-green {
             background: linear-gradient(135deg, #004d00 0%, #007a00 100%);
         }
+
         .btn-outline-warning {
             border-color: #f57c00;
             color: #f57c00;
         }
+
         .btn-outline-warning:hover {
             background-color: #f57c00;
             color: #fff;
         }
+
         .team-card img {
             width: 100%;
             height: auto;
             border-radius: 50%;
         }
+
         .social-icons a {
             color: #fff;
             margin-right: 10px;
         }
+
         .bg-gradient-button {
             background: linear-gradient(135deg, #f57c00 0%, #f28e16 100%);
         }
+
         .bg-gradient-custom {
-    background: linear-gradient(135deg, #152D31 0%, #20444A 46%, #2A575E 100%);
-}
+            background: linear-gradient(135deg, #142C30 0%, #2A575E 100%);
+        }
 
-.bg-gradient-header {
-    background: linear-gradient(155deg, #142C30 0%, #4EA1AD 100%);
-}
+        .bg-gradient-header {
+            background: linear-gradient(155deg, #142C30 0%, #4EA1AD 100%);
+        }
 
-.bg-gradient-footer {
-    background: linear-gradient(135deg, #142C30 0%, #2A575E 100%);
-}
+        .bg-gradient-green {
+            background: linear-gradient(135deg, #142C30 0%, #2A575E 100%);
+        }
 
-.bg-gradient-button {
-    background: linear-gradient(135deg, #FDC02C 0%, #ED5C38 100%);
-}
+        .bg-gradient-button {
+            background: linear-gradient(135deg, #FDC02C 0%, #ED5C38 100%);
+        }
 
-.team-card {
-    background-color: #343a40;
-    color: white;
-    border-radius: 15px;
-    text-align: center;
-    padding: 20px;
-}
+        .team-card {
+            background-color: #343a40;
+            color: white;
+            border-radius: 15px;
+            text-align: center;
+            padding: 20px;
+        }
 
-.team-card img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
+        .team-card img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
 
-.carousel-item {
-    display: flex;
-    justify-content: center;
-}
+        .carousel-item {
+            display: flex;
+            justify-content: center;
+        }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #f76c5e;
-    border-radius: 50%;
-}
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #f76c5e;
+            border-radius: 50%;
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -88,7 +98,8 @@
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="63" height="63">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -108,9 +119,6 @@
                     <li class="nav-item">
                         <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-outline-warning fw-bold" href="{{ route('login') }}">LOGIN</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -124,7 +132,10 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="bg-gradient-custom rounded-4 p-4">
-                                <img src="{{ asset('assetsFe/img/frame/logopastijadi1.png') }}" alt="About Image" class="img-fluid rounded-3" style="width: 332px; height: 354px;">
+                                <div class="container d-flex justify-content-center align-items-center">
+                                    <img src="{{ asset('assetsFe/img/frame/logopastijadi1.png') }}" alt="About Image"
+                                         class="img-fluid rounded-3" style="width: 332px; height: 354px;">
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -157,10 +168,17 @@
                         </div>
                     </div>
                     <div style="margin-top: 50px;">
-                        <hr
-                            style="border: none; height: 2px; background-color: #f57c00; width: 100px; margin: 0 auto 20px auto;">
-                        <h2 style="color: #F28E16; font-size: 32px; line-height: 1.6; text-align: center;">Our Visi Misi
-                        </h2>
+                        <div style="width: 504px; height: 39px; left: 104px; top: 700px; position: absolute">
+                            <div
+                                style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">
+                                Our Visi Misi</div>
+                            <div
+                                style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid">
+                            </div>
+                            <div
+                                style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -259,12 +277,20 @@
                 </div>
 
                 <!-- How We Work Section -->
-                <div style="margin-top: 50px;">
-                    <hr
-                        style="border: none; height: 2px; background-color: #f57c00; width: 100px; margin: 0 auto 20px auto;">
-                    <h2 style="color: #F28E16; font-size: 32px; margin-bottom: 20px;">How we work</h2>
+                <div>
+                    <div style="width: 504px; height: 39px; left: 104px; top: 1580px; position: absolute">
+                        <div
+                            style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">
+                            How We Work</div>
+                        <div
+                            style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid">
+                        </div>
+                        <div
+                            style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid">
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gradient-custom py-3 rounded-4 p-4">
+                <div class="bg-gradient-custom py-3 rounded-4 p-4" style="margin-top: 200px">
                     <div class="bg-gradient-custom rounded-4 p-4"
                         style="background: linear-gradient(135deg, #152D31 0%, #20444A 46%, #2A575E 100%);">
                         <div class="row">
@@ -273,7 +299,7 @@
                                     <div class="card-body">
                                         <div class="d-flex align-items-center mb-3">
                                             <div class="col-3 bg-white mr-3 p-3 rounded"
-                                                style="height: 60px; width: 80px">
+                                                style="height: 80px; width: 80px">
                                                 <h2 class="text-center text-warning mb-0">1</h2>
                                             </div>
                                             <h3 style="color: #F28E16; margin-left: 10px">Pendekatan Berfokus pada
@@ -295,7 +321,7 @@
                                     <div class="card-body">
                                         <div class="d-flex align-items-center mb-3">
                                             <div class="col-3 bg-white mr-3 p-3 rounded"
-                                                style="height: 60px; width: 80px">
+                                                style="height: 80px; width: 80px">
                                                 <h2 class="text-center text-warning mb-0">2</h2>
                                             </div>
                                             <h3 style=" color: #F28E16; margin-left: 10px">Pendekatan Berfokus pada
@@ -317,7 +343,7 @@
                                     <div class="card-body">
                                         <div class="d-flex align-items-center mb-3">
                                             <div class="col-3 bg-white mr-3 p-3 rounded"
-                                                style="height: 60px; width: 80px">
+                                                style="height: 80px; width: 80px">
                                                 <h2 class="text-center text-warning mb-0">3</h2>
                                             </div>
                                             <h3 style=" color: #F28E16; margin-left: 10px">Pendekatan Berfokus pada
@@ -339,7 +365,7 @@
                                     <div class="card-body">
                                         <div class="d-flex align-items-center mb-3">
                                             <div class="col-3 bg-white mr-3 p-3 rounded"
-                                                style="height: 60px; width: 80px">
+                                                style="height: 80px; width: 80px">
                                                 <h2 class="text-center text-warning mb-0">4</h2>
                                             </div>
                                             <h3 style=" color: #F28E16; margin-left: 10px">Pendekatan Berfokus pada
@@ -356,23 +382,26 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class=" text-center mt-4">
-                            <a href="#"
-                                class="btn bg-gradient-button text-white btn-lg px-5 py-3 rounded-pill">Selengkapnya</a>
-                        </div>
-
+            </section>
         </main>
         <main>
             <div class="container my-5">
                 <div style="margin-top: 50px;">
-                    <hr
-                        style="border: none; height: 2px; background-color: #f57c00; width: 100px; margin: 0 auto 20px auto;">
-                    <h2 style="color: #F28E16; font-size: 32px; margin-bottom: 20px; text-align:center ">Meet Our Amazing Team</h2>
+                    <div style="width: 504px; height: 39px; left: 104px; top: 2520px; position: absolute">
+                        <div
+                            style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">
+                            Meet Our Amazing Team</div>
+                        <div
+                            style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid">
+                        </div>
+                        <div
+                            style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid">
+                        </div>
+                    </div>
                 </div>
-                <div class="container my-5">
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
+                <div class="container my-5" >
+                    <div class="row" style="margin-top: 200px">
+                        <div class="col-md-6 mb-4" >
                             <div class="card team-card">
                                 <div class="card-body">
                                     <img src="{{ asset('assetsFe/img/team/team-1.jpg') }}" alt="William Anderson">
@@ -410,52 +439,61 @@
                 <!-- Font Awesome Icons -->
                 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
             </div>
-        </div>
+            </div>
         </main>
-    <!-- Footer -->
-    <div class="bg-gradient-header py-5">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-3">
-                    <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" class="img-fluid mb-3">
-                    <p class="text-white fs-4">Digital Business<br>Transformation Solutions.</p>
-                </div>
-                <div class="col-md-3">
-                    <h5 class="text-white fw-bold mb-3">Headquarters</h5>
-                    <p class="text-white">
-                        Lippo Thamrin Lt.5 #0503<br>
-                        Jl. M.H.Thamrin No.20, Menteng<br>
-                        Jakarta Pusat 10350, Indonesia
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <h5 class="text-white fw-bold mb-3">Support</h5>
-                    <p class="text-white">
-                        Privacy Policy<br>
-                        Term and Conditions
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <h5 class="text-white fw-bold mb-3">Connect With Us</h5>
-                    <div class="d-flex flex-wrap">
-                        <a href="https://www.instagram.com/yourprofile" target="_blank" class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/yourprofile" target="_blank" class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="https://www.youtube.com/yourchannel" target="_blank" class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
-                            <i class="bi bi-youtube"></i>
-                        </a>
-                        <a href="mailto:youremail@example.com" class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
-                            <i class="bi bi-envelope"></i>
-                        </a>
+        <!-- Footer -->
+        <footer class="bg-gradient-green text-white py-5">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-md-3">
+                        <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" class="img-fluid mb-3">
+                        <p class="text-white fs-4">Digital Business<br>Transformation Solutions.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="text-white fw-bold mb-3">Headquarters</h5>
+                        <p class="text-white">
+                            Lippo Thamrin Lt.5 #0503<br>
+                            Jl. M.H.Thamrin No.20, Menteng<br>
+                            Jakarta Pusat 10350, Indonesia
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="text-white fw-bold mb-3">Support</h5>
+                        <p class="text-white">
+                            Privacy Policy<br>
+                            Term and Conditions
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="text-white fw-bold mb-3">Connect With Us</h5>
+                        <div class="d-flex flex-wrap">
+                            <a href="https://www.instagram.com/yourprofile" target="_blank"
+                                class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
+                                style="width: 36px; height: 36px;">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/yourprofile" target="_blank"
+                                class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
+                                style="width: 36px; height: 36px;">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.youtube.com/yourchannel" target="_blank"
+                                class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
+                                style="width: 36px; height: 36px;">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                            <a href="mailto:youremail@example.com"
+                                class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
+                                style="width: 36px; height: 36px;">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

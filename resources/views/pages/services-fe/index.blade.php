@@ -66,18 +66,11 @@
                 <li class="nav-item">
                     <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-warning fw-bold" href="{{ route('login') }}">LOGIN</a>
-                </li>
             </ul>
         </div>
     </div>
 </nav>
-    <div style="width: 504px; height: 39px; left: 104px; top: 1000px; position: absolute">
-        <div style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">Our Services</div>
-        <div style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid"></div>
-        <div style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid"></div>
-    </div>
+
     <main>
         <section class="bg-image-section">
             <div class="container">
@@ -86,7 +79,7 @@
                         <p class="text-white">Solusi pembersihan terjangkau</p>
                         <h1 class="display-4 fw-bold mb-4 text-white">Layanan Berkualitas Tinggi dan Ramah dengan Harga Wajar</h1>
                         <p class="lead mb-4 text-white">Kami menyediakan layanan pembersihan komprehensif yang disesuaikan dengan kebutuhan Anda. Mulai dari layanan pembersihan rumah</p>
-                        <a href="#" class="btn bg-gradient-secondary text-white">Selengkapnya</a>
+                        
                     </div>
                     <div class="col-lg-6">
                         <div class="position-relative">
@@ -100,6 +93,11 @@
 
         <section class="py-5">
             <div class="container">
+                <div style="width: 504px; height: 39px; left: 104px; top: 1150px; position: absolute">
+                    <div style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">Our Services</div>
+                    <div style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid"></div>
+                    <div style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid"></div>
+                </div>
                 <div class="row mb-5">
                     <div class="col-lg-6">
                         <h2 class="display-5 fw-bold">Kami selalu memberikan layanan terbaik</h2>
@@ -118,7 +116,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $service->nama_services }}</h5>
                                     <p class="card-text">{{ \Illuminate\Support\Str::limit($service->deskripsi, 100) }}</p>
-                                    <a href="{{ route('servicesfe.show', $service->id) }}" class="btn btn-outline-warning">Selengkapnya</a>
+                                    <a href="{{ route('servicesfe.show', $service->id) }}"class="btn btn-lg text-white fw-bold" style="background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; font-family: Montserrat, sans-serif;">Selengkapnya</a>
                                 </div>
                             </div>
                         </div>

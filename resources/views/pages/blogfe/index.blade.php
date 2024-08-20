@@ -45,9 +45,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-outline-warning fw-bold" href="{{ route('login') }}">LOGIN</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -55,7 +53,7 @@
     <div class="container-fluid services-section">
         <div class="row justify-content-center">
             <div class="col-12 text-center">
-                <div class="services-title" style="color: #EF6937; font-size: 32px; font-family: 'Inter', sans-serif; font-weight: 600;">
+                <div class="services-title" style="margin-top:50px ; color: #EF6937; font-size: 32px; font-family: 'Inter', sans-serif; font-weight: 600;">
                     Blog Pasti Jadi
                 </div>
                 <div class="d-flex justify-content-center mt-2 line-container">

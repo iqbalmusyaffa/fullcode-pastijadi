@@ -74,11 +74,20 @@
 .font-weight-light {
     font-weight: 300;
 }
+.bg-gradient-custom {
+            background: linear-gradient(135deg, #142C30 0%, #2A575E 100%);
+        }
+        .bg-gradient-header {
+            background: linear-gradient(155deg, #142C30 0%, #4EA1AD 100%);
+        }
+        .bg-gradient-green {
+            background: linear-gradient(135deg, #142C30 0%, #2A575E 100%);
+        }
     </style>
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-gradient-green w-100 position-relative" style="min-height: 100px;">
+<nav class="navbar navbar-expand-lg bg-gradient-header w-100 position-relative" style="min-height: 100px;">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="63" height="63">
@@ -103,9 +112,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-warning fw-bold" href="{{ route('login') }}">LOGIN</a>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -114,7 +121,7 @@
 <div class="container-fluid services-section">
     <div class="row">
         <div class="col-12">
-            <div class="services-title">Blog Pasti Jadi</div>
+            <div class="services-title">Contact Us</div>
             <div class="line-container">
                 <div class="line line-blue"></div>
                 <div class="line line-orange"></div>
@@ -153,7 +160,7 @@
                             <input type="checkbox" class="form-check-input" id="consentCheck">
                             <label class="form-check-label" for="consentCheck">Saya menyetujui Lollie's Handmade untuk menghubungi saya melalui informasi yang telah saya berikan.</label>
                         </div>
-                        <button type="submit" class="btn btn-light w-100">Kirim</button>
+                        <button type="submit" class="btn" style="margin-left:20px; width:710px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Kirim</button>
                     </form>
                 </div>
             </div>

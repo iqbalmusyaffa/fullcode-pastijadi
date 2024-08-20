@@ -249,9 +249,6 @@
                 <li class="nav-item">
                     <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-warning fw-bold" href="{{ route('login') }}">LOGIN</a>
-                </li>
             </ul>
         </div>
     </div>
@@ -398,7 +395,7 @@
         </div>
       </div>
     </div>
-    <a href="#" style="display: inline-block; padding: 13px 35px; background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Selengkapnya</a>
+    
   </div><br><br><br><br><br><br>
   {{-- <div style="width: 504px; height: 39px; left: 104px; top: 3400px; position: absolute">
     <div style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">Testimonial Pastijadi</div>
@@ -473,7 +470,7 @@
         </div>
 
         <!-- Author Filter -->
-        <div class="col-12 col-md-4 mb-2 mb-md-0">
+        <div class="col-12 col-md-4 mb-2 mb-md-0" >
             <select name="author" class="form-select">
                 <option value="">Select Author</option>
                 @foreach($authors as $author)
@@ -486,7 +483,7 @@
 
         <!-- Filter Button -->
         <div class="col-12 col-md-4 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary w-100">Filter</button>
+            <button type="submit" class="btn" style="margin-left:20px; width:200px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Filter</button>
         </div>
     </div>
 </form>
@@ -582,7 +579,7 @@
                           <input type="checkbox" class="form-check-input" id="consentCheck">
                           <label class="form-check-label" for="consentCheck">Saya menyetujui Lollie's Handmade untuk menghubungi saya melalui informasi yang telah saya berikan.</label>
                       </div>
-                      <button type="submit" class="btn btn-light w-100">Kirim</button>
+                      <button type="submit" class="btn" style="margin-left:20px; width:710px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Kirim</button>
                   </form>
               </div>
           </div>
