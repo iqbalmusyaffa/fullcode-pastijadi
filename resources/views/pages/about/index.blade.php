@@ -278,7 +278,7 @@
 
                 <!-- How We Work Section -->
                 <div>
-                    <div style="width: 504px; height: 39px; left: 104px; top: 1580px; position: absolute">
+                    <div style="width: 504px; height: 39px; left: 104px; top: 1680px; position: absolute">
                         <div
                             style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">
                             How We Work</div>
@@ -387,7 +387,7 @@
         <main>
             <div class="container my-5">
                 <div style="margin-top: 50px;">
-                    <div style="width: 504px; height: 39px; left: 104px; top: 2520px; position: absolute">
+                    <div style="width: 504px; height: 39px; left: 104px; top: 2620px; position: absolute">
                         <div
                             style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">
                             Meet Our Amazing Team</div>
