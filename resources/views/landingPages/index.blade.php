@@ -513,7 +513,7 @@
                             <p class="mb-0 text-muted">{{ $blog->created_at->format('M d, Y') }} ∙ {{ $blog->read_time }} min read</p>
                         </div>
                     </div>
-                    <a href="{{ route('blog.show', $blog->id) }}" class="btn btn-sm text-white mt-3 btn-custom">Selengkapnya</a>
+                    <a href="{{ route('blogfe.index') }}" class="btn btn-sm text-white mt-3 btn-custom">Selengkapnya</a>
                 </div>
             </div>
             @endforeach

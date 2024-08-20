@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <!-- Add a Read More button here -->
-                        <a href="#" class="btn btn-primary mt-3">Read More</a>
+                        <a href="{{ route('blogfe.show', $blog->id) }}" class="btn btn-primary mt-3">Read More</a>
                     </div>
                 </div>
             </div>

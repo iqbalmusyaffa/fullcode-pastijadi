@@ -62,9 +62,14 @@ class BlogsController extends Controller
      */
     public function show(string $id)
     {
-        //
-    }
+        // Retrieve the blog post with the specified ID, including related user and categories
+        $blog = Blog::with(['user', 'categories'])->findOrFail($id);
 
+        // Pass the blog post to the view
+        return view('pages.detailblog.index', [
+            'blog' => $blog,
+        ]);
+    }
     /**
      * Show the form for editing the specified resource.
      */
