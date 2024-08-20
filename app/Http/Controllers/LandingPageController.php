@@ -11,8 +11,9 @@ use Illuminate\Http\Request;
 class LandingPageController extends Controller
 {
     public function index(Request $request)
-    {
-        $query = Blog::with(['user', 'categories']);
+{
+    // Initialize the query for Blog
+    $query = Blog::with(['user', 'categories']);
 
     // Apply category filter
     if ($request->has('category') && $request->category != '') {
@@ -23,19 +24,21 @@ class LandingPageController extends Controller
     if ($request->has('author') && $request->author != '') {
         $query->where('user_id', $request->author);
     }
-        // Mengambil semua artikel
-        $blogs = $query->get();
-        $categories = Kategori::all(); // Fetch all categories for the filter dropdown
-        $authors = User::all();
-        $blogs = Blog::with(['user', 'categories'])->get();
-        $services = Service::with('serviceCategory')->get();
 
-        // Mengirim data artikel ke view
-        return view('landingPages.index', [
-            'blogs' => $blogs,
-            'services' => $services,
-            'categories' => $categories,
-            'authors' => $authors,
-        ]);
-    }
+    // Execute the query and get the filtered blogs
+    $blogs = $query->get();
+
+    // Fetch all categories and authors for the filter dropdowns
+    $categories = Kategori::all();
+    $authors = User::all();
+    $services = Service::with('serviceCategory')->get();
+
+    // Pass filtered blogs and other data to the view
+    return view('landingPages.index', [
+        'blogs' => $blogs,
+        'services' => $services,
+        'categories' => $categories,
+        'authors' => $authors,
+    ]);
+}
 }

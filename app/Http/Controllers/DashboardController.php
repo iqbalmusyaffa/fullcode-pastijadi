@@ -6,7 +6,7 @@ use App\Models\Event;
 use App\Models\Participant;
 use App\Models\Payment;
 use App\Models\Kategori;
-use App\Models\Artikel;
+use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $countUser = User::count();
         $countCategory = Kategori::count();
         $categories = Kategori::all();
-        $countArticle = Artikel::count();
+        $countArticle = Blog::count();
         $categoryCounts = $categories->groupBy('nama_kategori')->map->count();
         $categoryLabels = $categoryCounts->keys()->toArray();
         $categoryValues = $categoryCounts->values()->toArray();

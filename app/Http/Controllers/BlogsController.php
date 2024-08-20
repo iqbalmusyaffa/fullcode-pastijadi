@@ -3,15 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Blog;
+use App\Models\Kategori;
+use App\Models\User;
 class BlogsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages.blogfe.index');
+        // Initialize the query for Blog
+        $query = Blog::with(['user', 'categories']);
+
+        // Apply category filter
+        if ($request->has('category') && $request->category != '') {
+            $query->where('categories_id', $request->category);
+        }
+
+        // Apply author filter
+        if ($request->has('author') && $request->author != '') {
+            $query->where('user_id', $request->author);
+        }
+
+        // Execute the query and get the filtered blogs
+        $blogs = $query->get();
+
+        // Fetch all categories and authors for the filter dropdowns
+        $categories = Kategori::all();
+        $authors = User::all();
+
+        // Pass filtered blogs and other data to the view
+        return view('pages.blogfe.index', [
+            'blogs' => $blogs,
+            'categories' => $categories,
+            'authors' => $authors,
+        ]);
     }
 
     /**
