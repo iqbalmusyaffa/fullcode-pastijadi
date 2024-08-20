@@ -108,7 +108,7 @@
 
             <!-- Filter Button -->
             <div class="col-12 col-md-4 d-flex align-items-end">
-                <button type="submit" class="btn btn-primary w-100">Filter</button>
+                <button type="submit" class="btn" style="margin-left:20px; width:200px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Filter</button>
             </div>
         </div>
     </form>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <!-- Add a Read More button here -->
-                        <a href="{{ route('blogfe.show', $blog->id) }}" class="btn btn-primary mt-3">Read More</a>
+                        <a href="{{ route('blogfe.show', $blog->id) }}" class="btn mt-3"  style="margin-left:20px; width:200px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Read More</a>
                     </div>
                 </div>
             </div>

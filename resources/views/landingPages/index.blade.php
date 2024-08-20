@@ -395,7 +395,7 @@
         </div>
       </div>
     </div>
-    
+
   </div><br><br><br><br><br><br>
   {{-- <div style="width: 504px; height: 39px; left: 104px; top: 3400px; position: absolute">
     <div style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">Testimonial Pastijadi</div>
@@ -513,7 +513,7 @@
                             <p class="mb-0 text-muted">{{ $blog->created_at->format('M d, Y') }} ∙ {{ $blog->read_time }} min read</p>
                         </div>
                     </div>
-                    <a href="{{ route('blogfe.index') }}" class="btn btn-sm text-white mt-3 btn-custom">Selengkapnya</a>
+                    <a href="{{ route('blogfe.index') }}" class="btn mt-3"  style="margin-left:20px; width:200px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Selengkapnya</a>
                 </div>
             </div>
             @endforeach
