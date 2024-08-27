@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_services');
             $table->text('deskripsi');
+            $table->longText('deskripsifull');
             $table->string('image'); // URL gambar
             $table->foreignId('service_categories_id')->constrained('service_categories'); // Define the foreign key
             $table->decimal('price', 10, 2);

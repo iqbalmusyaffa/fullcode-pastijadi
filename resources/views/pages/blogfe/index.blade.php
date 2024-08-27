@@ -120,7 +120,7 @@
                 <div class="card h-100">
                     <img src="{{ Storage::url('images/' . $blog->image) }}" class="card-img-top" alt="Blog image">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $blog->title }}</h5>
+                        <h5 class="card-title">{{ \Illuminate\Support\Str::words($blog->title, 50, '...') }}</h5>
                         <span class="badge bg-light text-dark border border-dark" style="font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">
                             {{ $blog->categories->nama_kategori }}
                         </span>

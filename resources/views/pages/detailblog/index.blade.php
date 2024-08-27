@@ -73,7 +73,7 @@
             {{ $blog->categories->nama_kategori }}
         </span>
         <div class="article-content">
-            <p>{{ $blog->description }}</p>
+            <p>{!! $blog->description !!}</p>
         </div>
     </article>
 </main>

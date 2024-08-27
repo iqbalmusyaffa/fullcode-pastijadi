@@ -501,7 +501,7 @@
             <div class="card" style="width: 270px;">
                 <img src="{{ asset('storage/images/' . $blog->image) }}" class="card-img-top" alt="{{ $blog->title }}">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $blog->title }}</h5>
+                    <h5 class="card-title">{{ \Illuminate\Support\Str::words($blog->title, 50, '...') }}</h5>
                     <!-- Category Badge -->
                     <span class="badge bg-light text-dark border border-dark" style="font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">
                         {{ $blog->categories->nama_kategori }}
