@@ -35,7 +35,7 @@
             <li class="nav-item {{ Request::is('kategori') ? 'active' : '' }}">
                 <a class="nav-link collapsed" href="/kategori">
                     <i class="bi bi-tag-fill"></i>
-                    <span>Kategori</span>
+                    <span>Kategori Blog</span>
                 </a>
             </li>
         <!-- New Artikel Menu Item -->

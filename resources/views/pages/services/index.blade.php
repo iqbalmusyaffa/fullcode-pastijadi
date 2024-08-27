@@ -110,9 +110,17 @@
                                 @enderror
                             </div>
                             <div class="col-md-12">
-                                <label for="deskripsi" class="form-label">Deskripsi</label>
+                                <label for="deskripsi" class="form-label">Deskripsi Singkat</label>
                                 <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3">{{ old('deskripsi') }}</textarea>
                                 @error('deskripsi')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col-md-12">
+                                <label for="deskripsifull" class="form-label">Deskripsi Full</label>
+                                <input id="x" type="hidden" name="deskripsifull" value="{{ old('deskripsifull') }}">
+                                <trix-editor input="x"></trix-editor>
+                                @error('deskripsifull')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -176,12 +184,23 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="deskripsi" class="form-label">Deskripsi</label>
+                                    <label for="deskripsi" class="form-label">Deskripsi Singkat</label>
                                     <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3">{{ old('deskripsi', $service->deskripsi) }}</textarea>
                                     @error('deskripsi')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <div class="mb-3">
+                                    <label for="deskripsifull" class="form-label">Deskripsi Full</label>
+                                    <!-- Hidden input for storing the trix editor content -->
+                                    <input id="deskripsifull-{{ $service->id }}" type="hidden" name="deskripsifull" value="{{ $service->deskripsifull }}">
+                                    <!-- Trix Editor with binding to the hidden input -->
+                                    <trix-editor input="deskripsifull-{{ $service->id }}"></trix-editor>
+                                    @error('deskripsifull')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                </div>
+
                                 <div class="col-md-12">
                                     <label for="service_categories_id" class="form-label">Kategori Service</label>
                                     <select class="form-select" id="service_categories_id" name="service_categories_id">
@@ -233,6 +252,10 @@
                             <div class="mb-3">
                                 <label for="deskripsi" class="form-label">Deskripsi</label>
                                 <p>{{ $service->deskripsi }}</p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="deskripsifull" class="form-label">Deskripsi Full</label>
+                                <p>{!! $service->deskripsifull !!}</p>
                             </div>
                             <div class="mb-3">
                                 <label for="service_categories_id" class="form-label">Kategori Service</label>

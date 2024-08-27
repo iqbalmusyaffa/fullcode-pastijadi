@@ -42,6 +42,7 @@ class ServiceController extends Controller
     $request->validate([
         'nama_services' => 'required|string|max:255',
         'deskripsi' => 'required|string',
+        'deskripsifull' => 'required|string',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
         'service_categories_id' => 'required|exists:service_categories,id',
         'price' => 'required|numeric', // Allow numeric values (including decimals)
@@ -49,6 +50,7 @@ class ServiceController extends Controller
     [
         'nama_services.required' => 'Nama Service wajib diisi',
         'deskripsi.required' => 'Deskripsi wajib diisi',
+        'deskripsifull.required' => 'Deskripsi Full wajib diisi',
         'image.required' => 'Gambar wajib diisi',
         'service_categories_id.required' => 'Kategori Service wajib diisi',
         'price.required' => 'Harga wajib diisi',
@@ -65,6 +67,7 @@ class ServiceController extends Controller
     Service::create([
         'nama_services' => $request->nama_services,
         'deskripsi' => $request->deskripsi,
+        'deskripsifull' => $request->deskripsifull,
         'image' => $hashedImageName, // Save the hashed image name
         'service_categories_id' => $request->service_categories_id,
         'price' => $request->price,
@@ -94,6 +97,7 @@ class ServiceController extends Controller
     $request->validate([
         'nama_services' => 'required|string|max:255',
         'deskripsi' => 'required|string',
+        'deskripsifull' => 'required|string',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
         'service_categories_id' => 'required|exists:service_categories,id',
         'price' => 'required|numeric', // Allow numeric values (including decimals)
@@ -101,6 +105,7 @@ class ServiceController extends Controller
     [
         'nama_services.required' => 'Nama Service wajib diisi',
         'deskripsi.required' => 'Deskripsi wajib diisi',
+        'deskripsifull.required' => 'Deskripsi Full wajib diisi',
         'service_categories_id.required' => 'Kategori Service wajib diisi',
         'price.required' => 'Harga wajib diisi',
         'price.numeric' => 'Harga harus berupa angka', // Custom message for numeric validation
@@ -119,6 +124,7 @@ class ServiceController extends Controller
     $service->update([
         'nama_services' => $request->nama_services,
         'deskripsi' => $request->deskripsi,
+        'deskripsifull' => $request->deskripsifull,
         'service_categories_id' => $request->service_categories_id,
         'price' => $request->price,
     ]);

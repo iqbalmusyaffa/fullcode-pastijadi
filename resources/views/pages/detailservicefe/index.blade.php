@@ -53,21 +53,50 @@
                 <li class="nav-item">
                     <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-warning fw-bold" href="{{ route('login') }}">LOGIN</a>
-                </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container mt-5">
-    <h1 class="text-orange mb-4">{{ $service->nama_services }}</h1>
-    <p class="lead mb-4">{{ $service->deskripsi }}</p>
+{{-- <div class="container mt-5">
+    <h1 class="text-orange mb-4">Services</h1>
     <img src="{{ asset('storage/images/' . $service->image) }}" class="img-fluid rounded mb-4" alt="{{ $service->name }}">
+    <h1 class="text-dark mb-5">{{ $service->nama_services }}</h1>
+    <p class="lead mb-4">{{ $service->deskripsi }}</p>
+    <p class="lead mb-4"> {!! $service->deskripsifull !!}</p>
     <p class="text-muted">Price: Rp. {{ number_format($service->price, 0, ',', '.') }}</p>
     <a href="#" class="btn btn-gradient-orange btn-lg">Start Project</a>
+</div> --}}
+<div class="container mt-5">
+    <!-- Section Title -->
+    <h1 class="text-orange mb-4">Services</h1>
+
+    <!-- Service Image -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <img src="{{ asset('storage/images/' . $service->image) }}" class="img-fluid rounded mb-4" alt="{{ $service->name }}">
+        </div>
+    </div>
+
+    <!-- Service Information -->
+    <div class=" p-4">
+        <!-- Service Name -->
+        <h1 class="text-dark mb-5">{{ $service->nama_services }}</h1>
+
+        <!-- Service Description -->
+        <p class="lead mb-4">{{ $service->deskripsi }}</p>
+        <p class="lead mb-4">{!! $service->deskripsifull !!}</p>
+
+        <!-- Price Information -->
+        <p class="text-muted"><h4>Price: Rp. {{ number_format($service->price, 0, ',', '.') }}</h4></p>
+        <p  class="text-muted">Biaya dihitung dengan mempertimbangkan jumlah halaman yang akan di muat dan durasi.</p>
+        <!-- Call to Action Button -->
+        <div class="text-end">
+            <a href="https://wa.me/628155060895" class="btn btn-gradient-orange btn-lg">Start Project</a>
+          </div>
+    </div>
 </div>
+
 
 <footer class="bg-gradient-green text-white py-5">
     <div class="container">

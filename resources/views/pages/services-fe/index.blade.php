@@ -79,7 +79,7 @@
                         <p class="text-white">Solusi pembersihan terjangkau</p>
                         <h1 class="display-4 fw-bold mb-4 text-white">Layanan Berkualitas Tinggi dan Ramah dengan Harga Wajar</h1>
                         <p class="lead mb-4 text-white">Kami menyediakan layanan pembersihan komprehensif yang disesuaikan dengan kebutuhan Anda. Mulai dari layanan pembersihan rumah</p>
-                        
+
                     </div>
                     <div class="col-lg-6">
                         <div class="position-relative">
@@ -115,7 +115,7 @@
                                 <img src="{{ asset('storage/images/' . $service->image) }}" class="card-img-top" alt="{{ $service->nama_services }}">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $service->nama_services }}</h5>
-                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($service->deskripsi, 100) }}</p>
+                                    <p class="card-text">{{ \Illuminate\Support\Str::limit($service->deskripsi, 50) }}</p>
                                     <a href="{{ route('servicesfe.show', $service->id) }}"class="btn btn-lg text-white fw-bold" style="background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; font-family: Montserrat, sans-serif;">Selengkapnya</a>
                                 </div>
                             </div>

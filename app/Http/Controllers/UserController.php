@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::where('role_id', 2)->latest()->paginate();
+        $users = User::where('role_id', 1)->latest()->paginate();
         return view('pages.user.index', [
             'title' => 'User',
             'users' => $users
@@ -51,7 +51,7 @@ class UserController extends Controller
                 'address.required' => 'Alamat wajib diisi',
             ]
         );
-        
+
         //get user by ID
         $user = Auth::user();
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('title'); // Judul artikel
-            $table->text('description')->nullable(); // Deskripsi artikel
+            $table->longText('description')->nullable(); // Deskripsi artikel
             $table->foreignId('categories_id')->constrained('categories'); // Kategori artikel
             $table->foreignId('user_id')->constrained('users'); // Referensi ke tabel users
             $table->string('image'); // URL gambar

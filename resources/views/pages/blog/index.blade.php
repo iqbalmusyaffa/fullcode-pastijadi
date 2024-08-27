@@ -52,7 +52,7 @@
                                         <td>{{ $blog->title }}</td>
                                         <td>{{ $blog->categories->nama_kategori }}</td>
                                         <td><img src="{{ asset('storage/images/' . $blog->image) }}" alt="{{ $blog->title }}" width="100"></td>
-                                        <td>{{ \Illuminate\Support\Str::limit($blog->description, 25) }}</td>
+                                        <td>{{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 50) }}</td>
                                         <td>{{ $blog->user->name }}</td>
                                         <td>{{ $blog->published_at ? $blog->published_at->format('d M Y') : 'Belum dipublikasikan' }}</td>
                                         <td>{{ $blog->read_time ? $blog->read_time . ' menit' : 'N/A' }}</td>
@@ -125,7 +125,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" id="description" name="description" rows="3">{{ old('description') }}</textarea>
+                            <input id="description" type="hidden" name="description" value="{{ old('description') }}">
+                            <trix-editor input="description"></trix-editor>
                             @error('description')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -189,7 +190,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Deskripsi</label>
-                                <textarea class="form-control" id="description" name="description" rows="3">{{ old('description', $blog->description) }}</textarea>
+                                <input id="description{{ $blog->id }}" type="hidden" name="description" value="{{ old('description', $blog->description) }}">
+                                <trix-editor input="description{{ $blog->id }}"></trix-editor>
                                 @error('description')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -228,7 +230,7 @@
                             </div>
                         @endif
                         <p><strong>Deskripsi:</strong></p>
-                        <p>{{ $blog->description }}</p>
+                        <p>{!! $blog->description !!}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
