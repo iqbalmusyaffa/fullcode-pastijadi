@@ -87,6 +87,40 @@
             background-color: #f76c5e;
             border-radius: 50%;
         }
+
+        .services-section {
+            text-align: center;
+            padding: 50px;
+            position: relative;
+        }
+
+        .services-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #EF6937;
+        }
+
+        .line-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .line {
+            height: 3px;
+            border-radius: 20px;
+        }
+
+        .line-blue {
+            background-color: #21454B;
+            width: 44px;
+            margin-right: 8px;
+        }
+
+        .line-orange {
+            background-color: #F28E16;
+            width: 49px;
+        }
     </style>
 </head>
 
@@ -105,7 +139,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link text-warning fw-bold" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link text-white fw-bold" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white fw-bold" href="{{ route('about.index') }}">About</a>
@@ -134,7 +168,7 @@
                             <div class="bg-gradient-custom rounded-4 p-4">
                                 <div class="container d-flex justify-content-center align-items-center">
                                     <img src="{{ asset('assetsFe/img/frame/logopastijadi1.png') }}" alt="About Image"
-                                         class="img-fluid rounded-3" style="width: 332px; height: 354px;">
+                                        class="img-fluid rounded-3" style="width: 332px; height: 354px;">
                                 </div>
                             </div>
                         </div>
@@ -167,22 +201,19 @@
                             </div>
                         </div>
                     </div>
-                    <div style="margin-top: 50px;">
-                        <div style="width: 504px; height: 39px; left: 104px; top: 700px; position: absolute">
-                            <div
-                                style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">
-                                Our Visi Misi</div>
-                            <div
-                                style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid">
-                            </div>
-                            <div
-                                style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid">
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
             </section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="services-title" style="text-align: center">Our Visi Mision</div>
+                    <div class="line-container">
+                        <div class="line line-blue"></div>
+                        <div class="line line-orange"></div>
+                    </div>
+                </div>
+            </div>
         </main>
         <main style="padding: 50px 0;">
             <section style="width: 80%; margin: 0 auto; text-align: center;">
@@ -277,20 +308,16 @@
                 </div>
 
                 <!-- How We Work Section -->
-                <div>
-                    <div style="width: 504px; height: 39px; left: 104px; top: 1680px; position: absolute">
-                        <div
-                            style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">
-                            How We Work</div>
-                        <div
-                            style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid">
-                        </div>
-                        <div
-                            style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid">
+                <div class="row" style="margin-top: 40px">
+                    <div class="col-12">
+                        <div class="services-title" style="text-align: center">How we work!</div>
+                        <div class="line-container">
+                            <div class="line line-blue"></div>
+                            <div class="line line-orange"></div>
                         </div>
                     </div>
                 </div>
-                <div class="bg-gradient-custom py-3 rounded-4 p-4" style="margin-top: 200px">
+                <div class="bg-gradient-custom py-3 rounded-4 p-4" style="margin-top: 40px">
                     <div class="bg-gradient-custom rounded-4 p-4"
                         style="background: linear-gradient(135deg, #152D31 0%, #20444A 46%, #2A575E 100%);">
                         <div class="row">
@@ -386,22 +413,18 @@
         </main>
         <main>
             <div class="container my-5">
-                <div style="margin-top: 50px;">
-                    <div style="width: 504px; height: 39px; left: 104px; top: 2620px; position: absolute">
-                        <div
-                            style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">
-                            Meet Our Amazing Team</div>
-                        <div
-                            style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid">
-                        </div>
-                        <div
-                            style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid">
+                <div class="row" style="margin-top: 40px">
+                    <div class="col-12">
+                        <div class="services-title" style="text-align: center">Meet Our Amazing Team</div>
+                        <div class="line-container">
+                            <div class="line line-blue"></div>
+                            <div class="line line-orange"></div>
                         </div>
                     </div>
                 </div>
-                <div class="container my-5" >
-                    <div class="row" style="margin-top: 200px">
-                        <div class="col-md-6 mb-4" >
+                <div class="container my-5">
+                    <div class="row" style="margin-top: 40px">
+                        <div class="col-md-6 mb-4">
                             <div class="card team-card">
                                 <div class="card-body">
                                     <img src="{{ asset('assetsFe/img/team/team-1.jpg') }}" alt="William Anderson">

@@ -219,6 +219,7 @@
         padding-bottom: 2rem;
     }
 
+
         }
     </style>
 </head>
@@ -235,7 +236,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link text-warning fw-bold" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link text-white fw-bold" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white fw-bold" href="{{ route('about.index') }}">About</a>
@@ -285,14 +286,13 @@
                             <div style="width: 38.48px; height: 32.25px; left: 2.24px; top: 1.88px;"></div>
                         </div>
                         <img src="{{ asset('assetsFe/img/frame/logopastijadi1.png') }}" alt="Company Logo" class="img-fluid mb-3" style="max-width: 180.32px; height: auto;">
-                        <h1 class="text-warning fw-bold" style="font-size: 2rem; font-family: Montserrat; line-height: 1.2;">
+                        <h2 class="text-warning mb-2" style="font-size: 2rem; font-family: Inter, sans-serif; font-weight: 600; text-align: left;">
                             Digital Business<br/>Transformation Solutions.
-                        </h1>
+                        </h2>
                     </div>
                     <div class="col-md-6">
-                        <h2 class="text-white fw-bold fs-4 mb-3">Company</h2>
-                        <p class="text-white fs-6 fw-bold" style="font-family: Montserrat; line-height: 1.6; text-align: justify;">
-                            Berdiri sejak tahun 2018 di kota Surabaya, CV. PASTIJADI mewujudkan visi untuk menjadi pelopor dalam industri Teknologi Informasi. Dengan dedikasi yang tak tergoyahkan, kami menawarkan inovasi dan solusi terdepan yang dirancang khusus untuk memperkaya pengalaman pelanggan kami. Kami bertujuan untuk menjadi katalis perubahan, meningkatkan efisiensi dan produktivitas, serta memastikan keberlanjutan bisnis Anda di tengah transformasi digital yang pesat. Bersama CV. PASTIJADI, langkah menuju keunggulan dan kemajuan bisnis di era digital menjadi lebih mudah dan terjamin.
+                        <h2 class="text-white mb-2" style="font-size: 2.5rem; font-family: Inter, sans-serif; font-weight: 600; text-align: left;">Our Company</h2>
+                        <p class="text-white" style="font-size: 1.25rem; font-family: Inter, sans-serif; font-weight: 500; line-height: 1.65; text-align: left;">Berdiri sejak tahun 2018 di kota Surabaya, CV. PASTIJADI mewujudkan visi untuk menjadi pelopor dalam industri Teknologi Informasi. Dengan dedikasi yang tak tergoyahkan, kami menawarkan inovasi dan solusi terdepan yang dirancang khusus untuk memperkaya pengalaman pelanggan kami. Kami bertujuan untuk menjadi katalis perubahan, meningkatkan efisiensi dan produktivitas, serta memastikan keberlanjutan bisnis Anda di tengah transformasi digital yang pesat. Bersama CV. PASTIJADI, langkah menuju keunggulan dan kemajuan bisnis di era digital menjadi lebih mudah dan terjamin.</p>
                         </p>
                     </div>
                 </div>
