@@ -39,7 +39,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link text-warning fw-bold" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link text-white fw-bold" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white fw-bold" href="{{ route('about.index') }}">About</a>
