@@ -4,11 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pastijadi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Owl Carousel CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('assetsFe/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assetsFe/css/owlstyle.css') }}">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="{{ asset('assetsFe/js/owl.carousel.min.js') }}"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            center: true,
+            navText: [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    });
+</script>
+
     <style>
         .bg-gradient-orange {
             background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%);
@@ -397,53 +439,36 @@
     </div>
 
   </div><br><br><br><br><br><br>
-  {{-- <div style="width: 504px; height: 39px; left: 104px; top: 3400px; position: absolute">
-    <div style="width: 367.84px; left: 136.16px; top: 0px; position: absolute; color: #EF6937; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">Testimonial Pastijadi</div>
-    <div style="width: 44px; height: 0px; left: 0px; top: 25px; position: absolute; border-radius: 20px; border: 3px #21454B solid"></div>
-    <div style="width: 49px; height: 0px; left: 52px; top: 25px; position: absolute; border: 3px #F28E16 solid"></div>
-</div> --}}
-<div class="container-fluid services-section">
-    <div class="row">
-        <div class="col-12">
-            <div class="services-title">Testimonial Pastijadi</div>
-            <div class="line-container">
-                <div class="line line-blue"></div>
-                <div class="line line-orange"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container text-center my-5">
-    <div class="mx-auto" style="max-width: 800px;">
-      <h2 class="text-dark font-weight-bold mb-4">Testimonial from Satisfied Customers</h2>
-      <p class="text-dark font-weight-light">Kami menyediakan layanan Digital Business Transformation Solutions</p>
-    </div>
-  </div>
-  <div class="testimonial-container d-flex justify-content-center flex-wrap gap-4">
-      <div class="testimonial-box" style="width: 500px; height: 300px;">
-          <img src="{{ asset('assetsFe/img/team/team-1.jpg') }}" alt="Sarah K." style="width: 100px; height: 100px; margin: auto;">
-          <h3>Sarah K.</h3>
-          <p>I was looking for health information, but found the HealthTech website. This website really helps me save time without having to go to the doctor</p>
-          <div class="stars" >★★★★★</div>
-      </div>
-      <div class="testimonial-box" style="width: 500px; height: 300px;">
-          <img src="{{ asset('assetsFe/img/team/team-2.jpg') }}" alt="Michael L." style="width: 100px; height: 100px; margin: auto;">
-          <h3>Michael L.</h3>
-          <p>This website really helps me so that I don't easily believe the health hoaxes spread on social media</p>
-          <div class="stars">★★★★☆</div>
-      </div>
-      <div class="testimonial-box" style="width: 500px; height: 300px;">
-          <img src="{{ asset('assetsFe/img/team/team-3.jpg') }}" alt="Lauren M." style="width: 100px; height: 100px; margin: auto;">
-          <h3>Lauren M.</h3>
-          <p>This website has many experts with experience in their fields so we can trust it</p>
-          <div class="stars">★★★★★</div>
-      </div>
-  </div>
+
+
 </div><br><br><br>
 {{-- <div style="text-align: center; max-width: 800px; margin: auto;">
   <h2 style="color: #000000; font-size: 36px; font-family: Roboto, sans-serif; font-weight: buatca; line-height: 1.2; margin-bottom: 20px;">Testimonial from Satisfied Customers</h2>
   <p style="color: #000000; font-size: 18px; font-family: Roboto, sans-serif; font-weight: 300; line-height: 1.5;">Kami menyediakan layanan Digital Business Transformation Solutions</p>
 </div> --}}
+<section id="slider" class="pt-5">
+    <div class="container">
+        <h1 class="text-center"><b>Responsive Owl Carousel</b></h1>
+        <div class="slider">
+            <div class="owl-carousel">
+                <div class="slider-card">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="{{ asset('images/slide-1.jpg') }}" alt="">
+                    </div>
+                    <h5 class="mb-0 text-center"><b>HTML CSS3 Tutorials</b></h5>
+                    <p class="text-center p-4">Lorem ipsum dolor sit amet...</p>
+                </div>
+                <div class="slider-card">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="{{ asset('images/slide-1.jpg') }}" alt="">
+                    </div>
+                    <h5 class="mb-0 text-center"><b>CSS3 Tutorials</b></h5>
+                    <p class="text-center p-4">Lorem ipsum dolor sit amet...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="container-fluid services-section">
     <div class="row">
         <div class="col-12">
@@ -455,10 +480,10 @@
         </div>
     </div>
 </div>
-<form action="{{ route('home') }}" method="GET" class="mb-3">
-    <div class="row g-0">
-        <!-- Category Filter -->
-        <div class="col-12 col-md-4 mb-2 mb-md-0">
+<form action="{{ route('home') }}" method="GET" class="container mb-3">
+    <!-- Category Filter -->
+    <div class="row mb-2 justify-content-center">
+        <div class="col-12 col-md-4">
             <select name="category" class="form-select">
                 <option value="">Select Category</option>
                 @foreach($categories as $category)
@@ -468,9 +493,11 @@
                 @endforeach
             </select>
         </div>
+    </div>
 
-        <!-- Author Filter -->
-        <div class="col-12 col-md-4 mb-2 mb-md-0" >
+    <!-- Author Filter -->
+    <div class="row mb-2 justify-content-center">
+        <div class="col-12 col-md-4">
             <select name="author" class="form-select">
                 <option value="">Select Author</option>
                 @foreach($authors as $author)
@@ -480,15 +507,20 @@
                 @endforeach
             </select>
         </div>
+    </div>
 
-        <!-- Filter Button -->
-        <div class="col-12 col-md-4 d-flex align-items-end">
-            <button type="submit" class="btn" style="margin-left:20px; width:200px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Filter</button>
+    <!-- Submit Button -->
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4 text-center">
+            <button type="submit" class="btn"
+                style="width:100%; max-width:200px; background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%);
+                       border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif;
+                       font-weight: 700; text-decoration: none; text-align: center;">
+                Filter
+            </button>
         </div>
     </div>
 </form>
-
-
 
   <!-- Container to center and align content -->
     <!-- Filter Form -->
@@ -629,7 +661,34 @@
         </div>
     </div>
 </div>
-
+<script>
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            center: true,
+            navText: [
+                "<i class='fa fa-angle-left'></i>",
+                "<i class='fa fa-angle-right'></i>"
+            ],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -422,48 +422,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="container my-5">
-                    <div class="row" style="margin-top: 40px">
-                        <div class="col-md-6 mb-4">
-                            <div class="card team-card">
-                                <div class="card-body">
-                                    <img src="{{ asset('assetsFe/img/team/team-1.jpg') }}" alt="William Anderson">
-                                    <h5 class="mt-3">William Anderson</h5>
-                                    <p class="text-muted">CTO</p>
-                                    <p>Quisquam facilis cum velit laborum corrupti.</p>
-                                    <div class="social-icons">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="card team-card">
-                                <div class="card-body">
-                                    <img src="{{ asset('assetsFe/img/team/team-2.jpg') }}" alt="Amanda Jepson">
-                                    <h5 class="mt-3">Amanda Jepson</h5>
-                                    <p class="text-muted">Accountant</p>
-                                    <p>Dolorem tempora officia dicta laborum officiis.</p>
-                                    <div class="social-icons">
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
-                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                </div>
+
+                <div class="row" style="margin-top: 40px">
+                    <div class="col-md-12 mb-4">
+                        <div class="card team-card rounded-0"> <!-- Removed round corners -->
+                            <div class="card-body "> <!-- Removed padding for full-width image -->
+                                <img src="{{ asset('assets/img/1.png') }}" alt="William Anderson" class="img-fluid" style="width: 100%; height: auto; border-radius: 0;"> <!-- Full-width image -->
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Font Awesome Icons -->
-                <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-            </div>
-            </div>
+            <!-- Font Awesome Icons -->
+            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         </main>
+
+
+
         <!-- Footer -->
         <footer class="bg-gradient-green text-white py-5">
             <div class="container">
