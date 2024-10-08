@@ -14,6 +14,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -79,3 +80,4 @@ Route::get('/services/show/{id}', [ServiceController::class, 'show'])->name('ser
 // Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
 //     Route::get('/event/{id}', [LandingPageController::class, 'detail'])->name('eventLp');
 // });
+Route::resource('contact-be', ContactsController::class);

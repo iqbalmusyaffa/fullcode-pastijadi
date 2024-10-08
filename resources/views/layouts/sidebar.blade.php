@@ -45,6 +45,12 @@
                 <span>Blog</span>
             </a>
         </li>
+        <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="/contact-be">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Contact</span>
+            </a>
+        </li>
         </ul>
 
     </aside><!-- End Sidebar-->

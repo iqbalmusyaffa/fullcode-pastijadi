@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
-class ContactController extends Controller
+class ContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,7 +12,10 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::all(); // Fetch all contact submissions
-        return view('pages.contact.index', compact('contacts')); // Pass data to view
+        return view('pages.contact-be.index', [
+            'title' => 'contacts',
+            'contacts' => $contacts,
+        ]);// Pass data to view
     }
 
     /**
@@ -44,7 +47,7 @@ class ContactController extends Controller
             'additional_info' => $request->input('additional_info'),
             'consent' => $request->input('consent') ? true : false,
         ]);
-        return redirect()->route('contact.index')->with('success', 'Contact form submitted successfully!');
+        return redirect()->route('contact-be.index')->with('success', 'Contact form submitted successfully!');
     }
 
     /**
