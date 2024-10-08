@@ -580,43 +580,50 @@
 </div>
 
 </div><br><br><br><br><br>
-<div class="container py-5">
-  <div class="row justify-content-center">
+<<div class="container py-5">
+    <div class="row justify-content-center">
       <div class="col-lg-8">
-          <div class="card bg-gradient-custom text-white rounded-4 shadow">
-              <div class="card-body p-5">
-                  <h2 class="text-center mb-4">Hubungi Kami</h2>
-                  <form>
-                      <div class="mb-3">
-                          <input type="text" class="form-control" placeholder="Nama">
-                      </div>
-                      <div class="mb-3">
-                          <input type="email" class="form-control" placeholder="Email">
-                      </div>
-                      <div class="mb-3">
-                          <input type="text" class="form-control" placeholder="Perusahaan">
-                      </div>
-                      <div class="mb-3">
-                          <select class="form-select">
-                              <option selected>Layanan yang Diminati</option>
-                              <option value="1">Layanan 1</option>
-                              <option value="2">Layanan 2</option>
-                              <option value="3">Layanan 3</option>
-                          </select>
-                      </div>
-                      <div class="mb-3">
-                          <textarea class="form-control" rows="3" placeholder="Informasi Tambahan?"></textarea>
-                      </div>
-                      <div class="mb-3 form-check">
-                          <input type="checkbox" class="form-check-input" id="consentCheck">
-                          <label class="form-check-label" for="consentCheck">Saya menyetujui Lollie's Handmade untuk menghubungi saya melalui informasi yang telah saya berikan.</label>
-                      </div>
-                      <button type="submit" class="btn" style="margin-left:20px; width:710px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Kirim</button>
-                  </form>
+        <div class="card bg-gradient-custom text-white rounded-4 shadow">
+          <div class="card-body p-5">
+            <h2 class="text-center mb-4">Hubungi Kami</h2>
+            <form action="{{ route('contact.store') }}" method="POST">
+              @csrf
+              <div class="mb-3">
+                <input type="text" class="form-control" name="name" placeholder="Nama" required>
               </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" name="email" placeholder="Email" required>
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" name="company" placeholder="Perusahaan">
+              </div>
+              <div class="mb-3">
+                <select class="form-select" name="service" required>
+                  <option selected disabled>Layanan yang Diminati</option>
+                  <option value="Layanan 1">Layanan 1</option>
+                  <option value="Layanan 2">Layanan 2</option>
+                  <option value="Layanan 3">Layanan 3</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="additional_info" rows="3" placeholder="Informasi Tambahan?"></textarea>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="consentCheck" name="consent" required>
+                <label class="form-check-label" for="consentCheck">
+                  Saya menyetujui Lollie's Handmade untuk menghubungi saya melalui informasi yang telah saya berikan.
+                </label>
+              </div>
+              <button type="submit" class="btn" style="margin-left:20px; width:710px; display: inline-block; background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">
+                Kirim
+              </button>
+            </form>
           </div>
+        </div>
       </div>
+    </div>
   </div>
+
 </div><br><br><br><br>
 <!-- Footer -->
 <div class="bg-gradient-green py-5">
