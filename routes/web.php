@@ -23,14 +23,13 @@ Route::redirect('/','/home');
 Route::get('/home', [LandingPageController::class, 'index'])->name('home');
 Route::resource('about', AboutController::class);
 Route::resource('servicesfe', ServicesController::class);
-// Route::get('services/{id}', [ServicesController::class, 'show'])->name('services.show');
 Route::resource('contact', ContactController::class);
 Route::resource('blogfe', BlogsController::class);
 Route::middleware('guest')->group(function () {
-    Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.login');
-    Route::get('/registrasi', [AuthController::class, 'register'])->name('auth.register');
-    Route::post('/registrasi', [AuthController::class, 'store'])->name('auth.store');
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.login');
+Route::get('/registrasi', [AuthController::class, 'register'])->name('auth.register');
+Route::post('/registrasi', [AuthController::class, 'store'])->name('auth.store');
 })->withoutMiddleware([CheckRole::class]);;
 
 Route::group(['middleware' => ['auth', 'checkrole:1,2']], function () {
@@ -64,20 +63,22 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
     // Artikel Routes
    // List all articles
    Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
-Route::post('/blog/create', [BlogController::class, 'store'])->name('blog.create');
-Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
-Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
-Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
+   Route::post('/blog/create', [BlogController::class, 'store'])->name('blog.create');
+   Route::put('/blog/{id}', [BlogController::class, 'update'])->name('blog.update');
+   Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+   Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('blog.destroy');
 
 });
 
 // Service Routes
-Route::get('/services', [ServiceController::class, 'index'])->name('services');
-Route::post('/services/create', [ServiceController::class, 'store'])->name('services.create');
-Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
-Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.delete');
-Route::get('/services/show/{id}', [ServiceController::class, 'show'])->name('services.show');
-// Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
-//     Route::get('/event/{id}', [LandingPageController::class, 'detail'])->name('eventLp');
-// });
+   Route::get('/services', [ServiceController::class, 'index'])->name('services');
+   Route::post('/services/create', [ServiceController::class, 'store'])->name('services.create');
+   Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
+   Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.delete');
+   Route::get('/services/show/{id}', [ServiceController::class, 'show'])->name('services.show');
+
+
+// contact
 Route::resource('contact-be', ContactsController::class);
+// change password
+Route::post('/change-password', [UserController::class, 'changePassword'])->name('password.change');

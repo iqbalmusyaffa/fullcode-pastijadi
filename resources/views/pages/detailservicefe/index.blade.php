@@ -91,12 +91,14 @@
         <p class="text-muted"><h4>Price: Rp. {{ number_format($service->price, 0, ',', '.') }}</h4></p>
         <p  class="text-muted">Biaya dihitung dengan mempertimbangkan jumlah halaman yang akan di muat dan durasi.</p>
         <!-- Call to Action Button -->
-        <div class="text-end">
-            <a href="https://wa.me/628155060895" class="btn btn-gradient-orange btn-lg">Start Project</a>
-          </div>
+      <div class="text-end">
+        <a href="https://wa.me/6287765079444?text=Halo,%20Saya%20ingin%20menanyakan%20pricelist%20untuk%20{{ urlencode($service->nama_services) }}.%20Deskripsi:%20{{ urlencode($service->deskripsi) }}.%20Harga:%20{{ number_format($service->price, 2) }}" class="btn btn-gradient-orange btn-lg">
+            Start Project
+        </a>
+    </div>
     </div>
 </div>
-
+<!-- Service Information -->
 
 <footer class="bg-gradient-green text-white py-5">
     <div class="container">

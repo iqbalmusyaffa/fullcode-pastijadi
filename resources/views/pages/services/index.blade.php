@@ -20,7 +20,7 @@
         </div>
     @endif
 
-    <section class="section">
+    {{-- <section class="section">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -81,7 +81,74 @@
                 </div>
             </div>
         </div>
+    </section> --}}
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $title }}</h5>
+                        <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#addService">
+                            <i class="bi bi-plus-square"></i> Tambah Service
+                        </button>
+                        <!-- Default Table -->
+                        <table class="table table-borderless datatable">
+                            <thead class="text-center">
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama Service</th>
+                                    <th scope="col">Deskripsi</th>
+                                    <th scope="col">Kategori Service</th>
+                                    <th scope="col">Harga</th>
+                                    <th scope="col">Gambar</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                @forelse ($services as $i => $service)
+                                    <tr>
+                                        <th scope="row">{{ ++$i }}</th>
+                                        <td>{{ $service->nama_services }}</td>
+                                        <td>{{ $service->deskripsi }}</td>
+                                        <td>{{ $service->serviceCategory->nama_kategori }}</td>
+                                        <td>{{ number_format($service->price, 2) }}</td>
+                                        <td>
+                                            <img src="{{ asset('storage/images/' . $service->image) }}" alt="{{ $service->nama_services }}" style="width: 100px; height: auto;">
+                                        </td>
+                                        <td>
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('services.delete', $service->id) }}" method="POST">
+                                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editService{{ $service->id }}">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#showService{{ $service->id }}">
+                                                    <i class="bi bi-eye-fill"></i>
+                                                </button>
+                                                <a href="https://wa.me/6287765079444?text=Halo,%20Saya%20ingin%20menanyakan%20pricelist%20untuk%20.%20Namaservices:%20{{ urlencode($service->nama_services) }}.%20Deskripsi:%20{{ urlencode($service->deskripsi) }}.%20Harga:%20{{ number_format($service->price, 2) }}"
+                                                   target="_blank" class="btn btn-success btn-sm">
+                                                    <i class="bi bi-whatsapp"></i> WhatsApp
+                                                </a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class="bi bi-trash3"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="7" class="text-center">Data Services belum tersedia.</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                        <!-- End Default Table Example -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
 
     {{-- Modal Add Service --}}
     <div class="modal fade" id="addService" tabindex="-1">

@@ -122,6 +122,7 @@
                                         <div class="col-12">
                                             <p class="small mb-0">Already have an account? <a href="/login">Log
                                                     in</a></p>
+                                                    <p class="small mb-0"><a href="/forgot-password">Forgot Password?</a></p>
                                         </div>
                                     </form>
 
