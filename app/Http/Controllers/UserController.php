@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -94,5 +95,28 @@ class UserController extends Controller
 
         //redirect to index
         return redirect()->route('profile')->with(['success' => 'Data Berhasil Diubah!']);
+    }
+    public function changePassword(Request $request)
+    {
+        // Validate the input
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:6|confirmed', // Ensure new_password and confirmation match
+        ]);
+
+        // Get the currently authenticated user
+        $user = Auth::user();
+
+        // Check if the current password is correct
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors(['current_password' => 'Current password is incorrect.']);
+        }
+
+        // Update the password
+        $user->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        return redirect()->route('profile')->with('success', 'Password changed successfully!');
     }
 }
