@@ -89,3 +89,7 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink
 
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+Route::post('/profile/2fa-enable', [AuthController::class, 'enable2FA'])->name('2fa.enable');
+Route::post('/profile/2fa-disable', [AuthController::class, 'disable2FA'])->name('2fa.disable');
+Route::post('/profile/2fa-verify', [AuthController::class, 'verify2FA'])->name('2fa.verify');

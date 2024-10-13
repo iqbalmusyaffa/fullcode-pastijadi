@@ -61,6 +61,10 @@
                                 <button class="nav-link" data-bs-toggle="tab"
                                     data-bs-target="#profile-change-password">Change Password</button>
                             </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab"
+                                    data-bs-target="#profile-settings">Settings</button>
+                            </li>
                         </ul>
                         <div class="tab-content pt-2">
                             <div class="tab-pane fade show active profile-overview" id="profile-overview">
@@ -304,6 +308,26 @@
                                     <button type="submit" class="btn btn-primary">Change Password</button>
                                 </div>
                             </form><!-- End Change Password Form -->
+                        </div>
+
+                        <div class="tab-pane fade pt-3" id="profile-settings">
+                            <h5 class="card-title">Two-Factor Authentication (2FA)</h5>
+
+                            @if(Auth::user()->two_factor_enabled)
+                                <!-- Jika 2FA aktif, tampilkan tombol Disable -->
+                                <p>2FA is currently <strong>enabled</strong>.</p>
+                                <form action="{{ route('2fa.disable') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Disable 2FA</button>
+                                </form>
+                            @else
+                                <!-- Jika 2FA tidak aktif, tampilkan tombol Enable -->
+                                <p>2FA is currently <strong>disabled</strong>.</p>
+                                <form action="{{ route('2fa.enable') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary">Enable 2FA</button>
+                                </form>
+                            @endif
                         </div>
 
 
