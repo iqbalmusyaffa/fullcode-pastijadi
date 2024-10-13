@@ -96,12 +96,12 @@ class UserController extends Controller
         //redirect to index
         return redirect()->route('profile')->with(['success' => 'Data Berhasil Diubah!']);
     }
-    public function changePassword(Request $request)
-    {
+        public function changePassword(Request $request)
+        {
         // Validate the input
         $request->validate([
             'current_password' => 'required',
-            'new_password' => 'required|min:6|confirmed', // Ensure new_password and confirmation match
+            'new_password' => 'required|min:6|confirmed',
         ]);
 
         // Get the currently authenticated user
