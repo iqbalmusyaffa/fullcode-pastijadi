@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->string('profile')->nullable();
             $table->foreignId('role_id')->constrained('roles');
+            $table->string('remember_token')->nullable();
             $table->timestamps();
         });
     }
