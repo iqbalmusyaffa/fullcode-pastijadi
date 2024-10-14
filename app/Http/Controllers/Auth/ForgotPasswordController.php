@@ -10,7 +10,7 @@ class ForgotPasswordController extends Controller
 {
     public function showLinkRequestForm()
     {
-        return view('auth.passwords.email'); // View untuk memasukkan email
+        return view('auth.passwords.email'); // untuk memasukkan email
     }
 
     public function sendResetLinkEmail(Request $request)
@@ -21,7 +21,7 @@ class ForgotPasswordController extends Controller
         // Kirim link reset password
         $status = Password::sendResetLink($request->only('email'));
 
-        // Berikan response berdasarkan status pengiriman email
+        // response berdasarkan status pengiriman email
         return $status === Password::RESET_LINK_SENT
             ? back()->with(['status' => __($status)])
             : back()->withErrors(['email' => __($status)]);

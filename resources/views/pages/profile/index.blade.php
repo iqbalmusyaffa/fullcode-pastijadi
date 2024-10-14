@@ -61,6 +61,10 @@
                                 <button class="nav-link" data-bs-toggle="tab"
                                     data-bs-target="#profile-change-password">Change Password</button>
                             </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab"
+                                    data-bs-target="#profile-settings">Settings</button>
+                            </li>
                         </ul>
                         <div class="tab-content pt-2">
                             <div class="tab-pane fade show active profile-overview" id="profile-overview">
@@ -305,6 +309,41 @@
                                 </div>
                             </form><!-- End Change Password Form -->
                         </div>
+
+                        <div class="tab-pane fade pt-3" id="profile-settings">
+                            <h5 class="card-title">Two-Factor Authentication (2FA)</h5>
+
+                            <!-- Display success or error messages -->
+                            @if(session('success'))
+                                <div class="alert alert-success" role="alert" aria-live="polite">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            @if(session('error'))
+                                <div class="alert alert-danger" role="alert" aria-live="polite">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
+
+                            @if(Auth::user()->two_factor_enabled)
+                                <!-- If 2FA is enabled, display Disable button -->
+                                <p>2FA is currently <strong>enabled</strong>.</p>
+                                <form action="{{ route('2fa.disable') }}" method="POST" onsubmit="return confirm('Are you sure you want to disable 2FA?');">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger" aria-label="Disable Two-Factor Authentication">Disable 2FA</button>
+                                </form>
+                            @else
+                                <!-- If 2FA is not enabled, display Enable button -->
+                                <p>2FA is currently <strong>disabled</strong>.</p>
+                                <form action="{{ route('2fa.enable') }}" method="GET">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary" aria-label="Enable Two-Factor Authentication">Enable 2FA</button>
+                                </form>
+                            @endif
+                        </div>
+
+
 
 
                     </div>

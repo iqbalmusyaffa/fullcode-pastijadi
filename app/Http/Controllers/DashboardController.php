@@ -14,6 +14,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        
         $countUser = User::count();
         $countCategory = Kategori::count();
         $categories = Kategori::all();
