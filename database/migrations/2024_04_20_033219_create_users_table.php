@@ -25,6 +25,10 @@ return new class extends Migration
             $table->string('profile')->nullable();
             $table->foreignId('role_id')->constrained('roles');
             $table->string('remember_token')->nullable();
+            $table->boolean('two_factor_enabled')->default(false);
+            $table->string('two_factor_code')->nullable();
+            $table->boolean('two_factor_verified')->default(false);
+            $table->timestamp('two_factor_expires_at')->nullable();
             $table->timestamps();
         });
     }
