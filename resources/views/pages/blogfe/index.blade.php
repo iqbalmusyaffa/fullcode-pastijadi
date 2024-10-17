@@ -58,7 +58,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-gradient-header w-100 position-relative" style="min-height: 100px;">
+    {{-- <nav class="navbar navbar-expand-lg bg-gradient-header w-100 position-relative" style="min-height: 100px;">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="63" height="63">
@@ -88,7 +88,8 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> --}}
+      @include('layouts.header2')
     <div class="row">
         <div class="col-12">
             <div class="services-title" style="text-align: center ; margin-top : 40px">Our Blog</div>

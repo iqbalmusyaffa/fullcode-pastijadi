@@ -8,10 +8,13 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
         <!-- Owl Carousel CSS -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assetsFe/css/owl.carousel.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assetsFe/css/owlstyle.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assetscard/css/style.css') }}">
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -21,7 +24,9 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 <script>
     $(document).ready(function() {
         $(".owl-carousel").owlCarousel({
@@ -266,8 +271,9 @@
     </style>
 </head>
 <body>
+    @include('layouts.header2')
 <!-- Header -->
-<nav class="navbar navbar-expand-lg bg-gradient-header w-100 position-relative" style="min-height: 100px;">
+{{-- <nav class="navbar navbar-expand-lg bg-gradient-header w-100 position-relative" style="min-height: 100px;">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="63" height="63">
@@ -295,7 +301,7 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> --}}
 
 <div class="container-fluid p-0">
     <div class="position-relative">
@@ -351,7 +357,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+{{-- <div class="container-fluid">
     <div class="row mt-4">
         <div class="col-12 py-5" style="background: linear-gradient(104deg, #173136 0%, #23494F 50%, #2A575E 100%);">
             <div class="container">
@@ -397,6 +403,36 @@
         </div>
     </div>
 </div>
+</div> --}}
+<div class="container mt-5">
+    <div class="slider">
+        <div class="slide active">
+            <div class="row">
+                @foreach($services as $service)
+                    <div class="col-md-4 mb-4"> <!-- Adjust col-md-4 for 3 cards in a row -->
+                        <div class="card">
+                            <img src="{{ asset('storage/images/' . $service->image) }}"
+                                 alt="{{ $service->nama_services }}"
+                                 class="card-img-top"
+                                 style="max-height: 350px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $service->nama_services }}</h5>
+                                <p class="card-text">{{ $service->deskripsi }}</p>
+                            </div>
+                            <div class="mb-5 d-flex justify-content-around">
+                                <h3>Rp.{{ $service->price }}</h3>
+                                <button class="btn btn-primary" href="{{ route('servicesfe.index') }}">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+            </div>
+        </div>
+        <div class="controls">
+            <button class="control-btn" id="prevBtn">&#10094;</button>
+            <button class="control-btn" id="nextBtn">&#10095;</button>
+        </div>
+    </div>
 </div>
 <div class="container-fluid services-section">
     <div class="row">
@@ -448,7 +484,7 @@
 </div> --}}
 <section id="slider" class="pt-5">
     <div class="container">
-        <h1 class="text-center"><b>Responsive Owl Carousel</b></h1>
+        <h1 class="text-center"><b>Our Client</b></h1>
         <div class="slider">
             <div class="owl-carousel">
                 <div class="slider-card">
@@ -578,6 +614,7 @@
 </div> --}}
   </div>
 </div>
+<div id="map"></div>
 
 </div><br><br><br><br><br>
 <<div class="container py-5">
@@ -695,6 +732,31 @@
             }
         });
     });
+    let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides; // Loop back to the first slide
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Loop to the last slide
+            showSlide(currentSlide);
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
