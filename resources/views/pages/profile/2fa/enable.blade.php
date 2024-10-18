@@ -15,9 +15,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -34,28 +32,33 @@
 
 <body>
 
-    <main>
-<div class="container">
-    <h2>Enable Two-Factor Authentication (2FA)</h2>
-    <p>Scan the QR code below with your 2FA app, or enter the secret key manually:</p>
+<main>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <h2 class="text-center">Enable Two-Factor Authentication (2FA)</h2>
+                <p class="text-center">Scan the QR code below with your 2FA app, or enter the secret key manually:</p>
 
-    <div>
-        {!! $QRImage !!} <!-- Display the QR code SVG -->
+                <div class="text-center mb-4">
+                    {!! $QRImage !!} <!-- Display the QR code SVG -->
+                </div>
+
+                <p class="text-center">Secret Key: <strong>{{ $secretKey }}</strong></p>
+
+                <form action="{{ route('2fa.verify') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="code" class="form-label">Enter the code from your 2FA app:</label>
+                        <input type="text" id="code" name="code" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Verify</button>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <p>Secret Key: <strong>{{ $secretKey }}</strong></p>
-
-    <form action="{{ route('2fa.verify') }}" method="POST">
-        @csrf
-        <label for="code">Enter the code from your 2FA app:</label>
-        <input type="text" id="code" name="code" required>
-        <button type="submit">Verify</button>
-    </form>
-</div>
 </main><!-- End #main -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
 <script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
