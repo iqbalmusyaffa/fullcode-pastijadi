@@ -1,0 +1,56 @@
+/* Card Background and Text */
+.bg-gradient-custom {
+    .bg-gradient-header {
+        background: linear-gradient(155deg, #142C30 0%, #4EA1AD 100%);
+    }
+    color: white;
+    border-radius: 16px;
+}
+
+/* Form Inputs */
+.form-control, .form-select, textarea.form-control {
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.form-control::placeholder, .form-select option, textarea::placeholder {
+    color: #888;
+    font-weight: 500;
+}
+
+/* Consent Checkbox */
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.form-check-label {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+/* Spacing and Alignment */
+.text-center {
+    text-align: center;
+}
+
+.container.py-5 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+/* Responsive Spacing */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 2rem;
+    }
+}

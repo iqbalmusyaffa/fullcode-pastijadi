@@ -123,16 +123,16 @@
         }
     </style>
 </head>
-
 <body>
 
     <!-- Navbar -->
     @include('layouts.header2')
+    <br>
     <main>
         <main>
             <section class="py-5">
                 <div class="container">
-                    <h1 class="text-center mb-5">About PASTIJADI</h1>
+                    <h1 class="text-center mb-5 mt-6">About PASTIJADI</h1>
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="bg-gradient-custom rounded-4 p-4">
@@ -173,14 +173,15 @@
                     </div>
 
                 </div>
-
             </section>
-            <div class="row">
-                <div class="col-12">
-                    <div class="services-title" style="text-align: center">Our Visi Mision</div>
-                    <div class="line-container">
-                        <div class="line line-blue"></div>
-                        <div class="line line-orange"></div>
+            <div class="container-fluid services-section text-center py-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="services-title" style="font-size: 2.5rem; font-family: Inter, sans-serif; font-weight: 600;">Our Visi Mision</h2>
+                        <div class="line-container d-flex justify-content-center mt-3">
+                            <div class="line line-blue me-2" style="width: 5%; height: 5px;"></div>
+                            <div class="line line-orange" style="width: 5%; height: 5px;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -278,12 +279,14 @@
                 </div>
 
                 <!-- How We Work Section -->
-                <div class="row" style="margin-top: 40px">
-                    <div class="col-12">
-                        <div class="services-title" style="text-align: center">How we work!</div>
-                        <div class="line-container">
-                            <div class="line line-blue"></div>
-                            <div class="line line-orange"></div>
+                <div class="container-fluid services-section text-center py-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="services-title" style="font-size: 2.5rem; font-family: Inter, sans-serif; font-weight: 600;">How we work!</h2>
+                            <div class="line-container d-flex justify-content-center mt-3">
+                                <div class="line line-blue me-2" style="width: 5%; height: 5px;"></div>
+                                <div class="line line-orange" style="width: 5%; height: 5px;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -382,22 +385,23 @@
             </section>
         </main>
         <main>
-            <div class="container my-5">
-                <div class="row" style="margin-top: 40px">
+            <div class="container-fluid services-section text-center py-5">
+                <div class="row">
                     <div class="col-12">
-                        <div class="services-title" style="text-align: center">Meet Our Amazing Team</div>
-                        <div class="line-container">
-                            <div class="line line-blue"></div>
-                            <div class="line line-orange"></div>
+                        <h2 class="services-title" style="font-size: 2.5rem; font-family: Inter, sans-serif; font-weight: 600;">Meet Our Amazing Team</h2>
+                        <div class="line-container d-flex justify-content-center mt-3">
+                            <div class="line line-blue me-2" style="width: 5%; height: 5px;"></div>
+                            <div class="line line-orange" style="width: 5%; height: 5px;"></div>
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="container my-5">
                 <div class="row" style="margin-top: 40px">
                     <div class="col-md-12 mb-4">
                         <div class="card team-card rounded-0"> <!-- Removed round corners -->
                             <div class="card-body "> <!-- Removed padding for full-width image -->
-                                <img src="{{ asset('assets/img/1.png') }}" alt="William Anderson" class="img-fluid" style="width: 100%; height: auto; border-radius: 0;"> <!-- Full-width image -->
+                                <img src="{{ asset('assets/img/1.png') }}" alt="William Anderson" class="img-fluid" style="width: 50%; height: auto; border-radius: 0;"> <!-- Full-width image -->
                             </div>
                         </div>
                     </div>
@@ -407,61 +411,8 @@
             <!-- Font Awesome Icons -->
             <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         </main>
-
-
-
         <!-- Footer -->
-        <footer class="bg-gradient-green text-white py-5">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-md-3">
-                        <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" class="img-fluid mb-3">
-                        <p class="text-white fs-4">Digital Business<br>Transformation Solutions.</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h5 class="text-white fw-bold mb-3">Headquarters</h5>
-                        <p class="text-white">
-                            Lippo Thamrin Lt.5 #0503<br>
-                            Jl. M.H.Thamrin No.20, Menteng<br>
-                            Jakarta Pusat 10350, Indonesia
-                        </p>
-                    </div>
-                    <div class="col-md-3">
-                        <h5 class="text-white fw-bold mb-3">Support</h5>
-                        <p class="text-white">
-                            Privacy Policy<br>
-                            Term and Conditions
-                        </p>
-                    </div>
-                    <div class="col-md-3">
-                        <h5 class="text-white fw-bold mb-3">Connect With Us</h5>
-                        <div class="d-flex flex-wrap">
-                            <a href="https://www.instagram.com/yourprofile" target="_blank"
-                                class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
-                                style="width: 36px; height: 36px;">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                            <a href="https://www.facebook.com/yourprofile" target="_blank"
-                                class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
-                                style="width: 36px; height: 36px;">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="https://www.youtube.com/yourchannel" target="_blank"
-                                class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
-                                style="width: 36px; height: 36px;">
-                                <i class="bi bi-youtube"></i>
-                            </a>
-                            <a href="mailto:youremail@example.com"
-                                class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
-                                style="width: 36px; height: 36px;">
-                                <i class="bi bi-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </footer>
+        @extends('layouts.footer2')
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

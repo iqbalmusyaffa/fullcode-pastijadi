@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\TwoFactorController;
-
+use App\Http\Controllers\FaqController;
 // Rute untuk login, register, dan logout
 Route::redirect('/', '/home');
 Route::get('/home', [LandingPageController::class, 'index'])->name('home');
@@ -104,3 +104,5 @@ Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name(
 Route::middleware(['auth', '2fa'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+//
+Route::resource('/faq', FaqController::class);

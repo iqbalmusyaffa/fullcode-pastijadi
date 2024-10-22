@@ -10,14 +10,23 @@ body {
   margin-bottom: 30px;
   position: relative;
 }
-.slider .owl-item.active.center .slider-card {
+/* .slider .owl-item.active.center .slider-card {
   transform: scale(1.15);
   opacity: 1;
-  background: #ff9966; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #ff5e62, #ff9966); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ff9966;
+  background: -webkit-linear-gradient(to bottom, #ff5e62, #ff9966);
+  background: linear-gradient(to bottom, #ff5e62, #ff9966);
   color: #fff;
-}
+} */
+.slider .owl-item.active.center .slider-card {
+    transform: scale(1.15);
+    opacity: 1;
+    background: #142C30; /* fallback for old browsers */
+    background: -webkit-linear-gradient(155deg, #142C30, #4EA1AD); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(155deg, #142C30 0%, #4EA1AD 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+  }
+
 .slider-card {
   background: #fff;
   padding: 0px 0px;

@@ -53,60 +53,58 @@
             background-color: #F28E16;
             width: 49px;
         }
+        /* Button Customization */
+.btn-custom {
+    width: 100%;
+    max-width: 200px;
+    background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%);
+    border-radius: 16px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Responsive Card Adjustments */
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge {
+    font-size: 11px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    {{-- <nav class="navbar navbar-expand-lg bg-gradient-header w-100 position-relative" style="min-height: 100px;">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="63" height="63">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="{{ route('home') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="{{ route('about.index') }}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="{{ route('blogfe.index') }}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="{{ route('servicesfe.index') }}">Service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fw-bold" href="{{ route('contact.index') }}">Contact</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav> --}}
       @include('layouts.header2')
-    <div class="row">
-        <div class="col-12">
-            <div class="services-title" style="text-align: center ; margin-top : 40px">Our Blog</div>
-            <div class="line-container">
-                <div class="line line-blue"></div>
-                <div class="line line-orange"></div>
+      <br>
+      <div class="container-fluid services-section text-center py-5 mt-6">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="services-title" style="font-size: 2.5rem; font-family: Inter, sans-serif; font-weight: 600;">Our Blog</h2>
+                <div class="line-container d-flex justify-content-center mt-3">
+                    <div class="line line-blue me-2" style="width: 5%; height: 5px;"></div>
+                    <div class="line line-orange" style="width: 5%; height: 5px;"></div>
+                </div>
             </div>
         </div>
     </div>
-
-
     <main class="container my-5">
     </main>
-    <form action="{{ route('blogfe.index') }}" method="GET" class="container mb-3">
+    <form action="{{ route('home') }}" method="GET" class="container mb-3">
         <!-- Category Filter -->
-        <div class="row mb-2 justify-content-center">
-            <div class="col-12 col-md-4">
+        <div class="row mb-2 justify-content-center align-items-center">
+            <div class="col-12 col-md-3">
                 <select name="category" class="form-select">
                     <option value="">Select Category</option>
                     @foreach($categories as $category)
@@ -115,26 +113,8 @@
                         </option>
                     @endforeach
                 </select>
-            </div>
-        </div>
-
-        <!-- Author Filter -->
-        <div class="row mb-2 justify-content-center">
-            <div class="col-12 col-md-4">
-                <select name="author" class="form-select">
-                    <option value="">Select Author</option>
-                    @foreach($authors as $author)
-                        <option value="{{ $author->id }}" {{ request('author') == $author->id ? 'selected' : '' }}>
-                            {{ $author->name }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-4 text-center">
+            </div><br>
+            <div class="col-12 col-md-2 text-center">
                 <button type="submit" class="btn"
                     style="width:100%; max-width:200px; background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%);
                            border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif;
@@ -144,92 +124,52 @@
             </div>
         </div>
     </form>
-
     <section class="container my-5">
         <h3 class="mb-4">Related Blogs</h3>
         <div class="row">
             @foreach ($blogs as $blog)
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
+                        <!-- Blog Image -->
                         <img src="{{ Storage::url('images/' . $blog->image) }}" class="card-img-top" alt="Blog image">
+
                         <div class="card-body">
-                            <h5 class="card-title">{{ \Illuminate\Support\Str::words($blog->title, 50, '...') }}</h5>
+                            <!-- Blog Title -->
+                            <h5 class="card-title">
+                                {{ \Illuminate\Support\Str::words($blog->title, 50, '...') }}
+                            </h5>
+
+                            <!-- Category Badge -->
                             <span class="badge bg-light text-dark border border-dark"
-                                style="font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">
+                                  style="font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 700;">
                                 {{ $blog->categories->nama_kategori }}
                             </span>
+
+                            <!-- Author and Date Info -->
                             <div class="d-flex align-items-center mt-3">
                                 <img src="{{ $blog->user->profile ? asset('/storage/users/' . $blog->user->profile) : 'https://via.placeholder.com/57x57' }}"
-                                    class="rounded-circle me-3" alt="{{ $blog->user->name }}" width="57"
-                                    height="57">
+                                     class="rounded-circle me-3" alt="{{ $blog->user->name }}" width="57" height="57">
                                 <div>
                                     <p class="mb-0 fw-bold">{{ $blog->user->name }}</p>
-                                    <small class="text-muted">{{ $blog->published_at->format('M d, Y') }} •
-                                        {{ $blog->read_time }} min read</small>
+                                    <small class="text-muted">
+                                        {{ $blog->published_at->format('M d, Y') }} • {{ $blog->read_time }} min read
+                                    </small>
                                 </div>
                             </div>
-                            <!-- Add a Read More button here -->
-                            <a href="{{ route('blogfe.show', $blog->id) }}" class="btn mt-3"
-                                style="margin-left:20px; width:200px; display: inline-block;  background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; color: white; font-size: 16px; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; text-align: center;">Read
-                                More</a>
+
+                            <!-- Read More Button -->
+                            <div class="text-center mt-3">
+                                <a href="{{ route('blogfe.show', $blog->id) }}" class="btn btn-custom">
+                                    Read More
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </section>
-    <footer class="bg-gradient-green text-white py-5">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-3">
-                    <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" class="img-fluid mb-3">
-                    <p class="text-white fs-4">Digital Business<br>Transformation Solutions.</p>
-                </div>
-                <div class="col-md-3">
-                    <h5 class="text-white fw-bold mb-3">Headquarters</h5>
-                    <p class="text-white">
-                        Lippo Thamrin Lt.5 #0503<br>
-                        Jl. M.H.Thamrin No.20, Menteng<br>
-                        Jakarta Pusat 10350, Indonesia
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <h5 class="text-white fw-bold mb-3">Support</h5>
-                    <p class="text-white">
-                        Privacy Policy<br>
-                        Term and Conditions
-                    </p>
-                </div>
-                <div class="col-md-3">
-                    <h5 class="text-white fw-bold mb-3">Connect With Us</h5>
-                    <div class="d-flex flex-wrap">
-                        <a href="https://www.instagram.com/yourprofile" target="_blank"
-                            class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
-                            style="width: 36px; height: 36px;">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/yourprofile" target="_blank"
-                            class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
-                            style="width: 36px; height: 36px;">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="https://www.youtube.com/yourchannel" target="_blank"
-                            class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
-                            style="width: 36px; height: 36px;">
-                            <i class="bi bi-youtube"></i>
-                        </a>
-                        <a href="mailto:youremail@example.com"
-                            class="btn btn-outline-light rounded-circle me-2 mb-2 d-flex align-items-center justify-content-center"
-                            style="width: 36px; height: 36px;">
-                            <i class="bi bi-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </footer>
+    @include('layouts.footer2')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
