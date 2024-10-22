@@ -53,7 +53,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            {{-- <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Artikel</h5>
@@ -118,21 +118,21 @@
 
                     </div>
                 </div>
-            </div>
-
+            </div> --}}
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Blog</h5>
+                        <h5 class="card-title">Artikel Berdasarkan Kategori</h5>
 
-                        <!-- Bar Chart -->
-                        <div id="barChart"></div>
+                        <!-- Column Chart -->
+                        <div id="categoryChart"></div>
 
                         <script>
                             document.addEventListener("DOMContentLoaded", () => {
-                                new ApexCharts(document.querySelector("#barChart"), {
+                                new ApexCharts(document.querySelector("#categoryChart"), {
                                     series: [{
-                                        data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+                                        name: 'Jumlah Artikel',
+                                        data: @json($categoryValues)
                                     }],
                                     chart: {
                                         type: 'bar',
@@ -140,27 +140,104 @@
                                     },
                                     plotOptions: {
                                         bar: {
-                                            borderRadius: 4,
-                                            horizontal: true,
-                                        }
+                                            horizontal: false,
+                                            columnWidth: '55%',
+                                            endingShape: 'rounded'
+                                        },
                                     },
                                     dataLabels: {
                                         enabled: false
                                     },
+                                    stroke: {
+                                        show: true,
+                                        width: 2,
+                                        colors: ['transparent']
+                                    },
                                     xaxis: {
-                                        categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy',
-                                            'France', 'Japan',
-                                            'United States', 'China', 'Germany'
-                                        ],
+                                        categories: @json($categoryLabels),
+                                    },
+                                    yaxis: {
+                                        title: {
+                                            text: 'Jumlah Artikel'
+                                        }
+                                    },
+                                    fill: {
+                                        opacity: 1
+                                    },
+                                    tooltip: {
+                                        y: {
+                                            formatter: function(val) {
+                                                return val + " artikel"
+                                            }
+                                        }
                                     }
                                 }).render();
                             });
                         </script>
-                        <!-- End Bar Chart -->
+                        <!-- End Column Chart -->
 
                     </div>
                 </div>
             </div>
+
+
+      <!-- Service Stats -->
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Service Berdasarkan Kategori</h5>
+                <div id="serviceCategoryChart"></div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#serviceCategoryChart"), {
+                            series: [{
+                                name: 'Jumlah Service',
+                                data: @json($serviceCategoryValues)
+                            }],
+                            chart: {
+                                type: 'bar',
+                                height: 350
+                            },
+                            plotOptions: {
+                                bar: {
+                                    horizontal: false,
+                                    columnWidth: '55%',
+                                    endingShape: 'rounded'
+                                },
+                            },
+                            dataLabels: {
+                                enabled: false
+                            },
+                            stroke: {
+                                show: true,
+                                width: 2,
+                                colors: ['transparent']
+                            },
+                            xaxis: {
+                                categories: @json($serviceCategoryLabels),
+                            },
+                            yaxis: {
+                                title: {
+                                    text: 'Jumlah Service'
+                                }
+                            },
+                            fill: {
+                                opacity: 1
+                            },
+                            tooltip: {
+                                y: {
+                                    formatter: function(val) {
+                                        return val + " service"
+                                    }
+                                }
+                            }
+                        }).render();
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
 
             <div class="col-lg-6">
                 <div class="card">
