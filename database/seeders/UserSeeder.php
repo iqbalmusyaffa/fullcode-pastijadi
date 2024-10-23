@@ -39,6 +39,18 @@ class UserSeeder extends Seeder
                 'address' => 'Jl. Merdeka No. 10',
                 'role_id' => 1
             ],
+            [
+                'name' => 'Adminutama',
+                'email' => 'admin@example.com',
+                'phone_number' => '085678901234',
+                'username' => 'adminutama1 ',
+                'password' => Hash::make('@dmin4tama23#'),
+                'brith_date' => '2002-10-20',
+                'brith_place' => 'Surabaya',
+                'gender' => 'Laki-Laki',
+                'address' => 'Jl. Jambangan no 15',
+                'role_id' => 1
+            ],
         ];
 
         foreach($users as $key => $val){

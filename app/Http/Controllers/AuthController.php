@@ -53,24 +53,24 @@ class AuthController extends Controller
         return back()->with('error', 'email atau password salah');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|email:dns|unique:users',
-            'username' => 'required|unique:users|min:5',
-            'password' => 'required|min:5',
-        ]);
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-            'role_id' => 1
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => 'required',
+    //         'email' => 'required|email|email:dns|unique:users',
+    //         'username' => 'required|unique:users|min:5',
+    //         'password' => 'required|min:5',
+    //     ]);
+    //     User::create([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'username' => $request->username,
+    //         'password' => Hash::make($request->password),
+    //         'role_id' => 1
+    //     ]);
 
-        return redirect()->route('login')->with(['success' => 'Registrasi Berhasil! Silahkan Login']);
-    }
+    //     return redirect()->route('login')->with(['success' => 'Registrasi Berhasil! Silahkan Login']);
+    // }
 
     public function logout(Request $request)
     {
