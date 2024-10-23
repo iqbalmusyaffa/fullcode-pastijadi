@@ -32,8 +32,8 @@ Route::resource('blogfe', BlogsController::class);
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.login');
-    Route::get('/registrasi', [AuthController::class, 'register'])->name('auth.register');
-    Route::post('/registrasi', [AuthController::class, 'store'])->name('auth.store');
+    // Route::get('/registrasi', [AuthController::class, 'register'])->name('auth.register');
+    // Route::post('/registrasi', [AuthController::class, 'store'])->name('auth.store');
 });
 
 // Rute untuk pengguna terautentikasi dengan role tertentu
@@ -94,12 +94,12 @@ Route::resource('contact-be', ContactsController::class);
 Route::post('/change-password', [UserController::class, 'changePassword'])->name('password.change');
 
 // Forgot Password Routes
-Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+// Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+// Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
 // Reset Password Routes
-Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+// Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+// Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
 
 Route::middleware(['auth', '2fa'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
