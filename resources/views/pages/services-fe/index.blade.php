@@ -18,6 +18,17 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('assetsnavbar/css/material-kit.css?v=3.0.4') }}" rel="stylesheet" />
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assetaos/dist/aos.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assetaos/dist/aos.js') }}"> --}}
+    <script src="{{ asset('assetaos/dist/aos.js') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init();
+        });
+    </script>
+
     <style>
         .bg-gradient-primary {
             background: linear-gradient(218deg, #FCB92D 0%, #F69332 50%, #EF6737 100%);
@@ -105,12 +116,12 @@
         <section class="bg-image-section">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="2000">
                         <p class="text-white">Solusi pembersihan terjangkau</p>
                         <h1 class="display-4 fw-bold mb-4 text-white">Layanan Berkualitas Tinggi dan Ramah dengan Harga Wajar</h1>
                         <p class="lead mb-4 text-white">Kami menyediakan layanan pembersihan komprehensif yang disesuaikan dengan kebutuhan Anda. Mulai dari layanan pembersihan rumah</p>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="2000">
                         <div class="d-flex justify-content-center align-items-center position-relative">
                             <!-- First Image (Wider Image) -->
                             <img src="{{ asset('assetsFe/img/frame/asset3.png') }}" alt="Service Image"
@@ -144,9 +155,9 @@
                     </div>
                 </div>
                 <hr class="mb-5">
-                <div class="row g-4">
+                <div class="row g-4" >
                     @foreach ($services as $service)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="3000">
                         <div class="card h-100">
                             <img src="{{ asset('storage/images/' . $service->image) }}" class="card-img-top" alt="{{ $service->nama_services }}">
                             <div class="card-body">
