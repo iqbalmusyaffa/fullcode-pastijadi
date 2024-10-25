@@ -123,10 +123,10 @@
                                                 <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#showService{{ $service->id }}">
                                                     <i class="bi bi-eye-fill"></i>
                                                 </button>
-                                                <a href="https://wa.me/6287765079444?text=Halo,%20Saya%20ingin%20menanyakan%20pricelist%20untuk%20.%20Namaservices:%20{{ urlencode($service->nama_services) }}.%20Deskripsi:%20{{ urlencode($service->deskripsi) }}.%20Harga:%20{{ number_format($service->price, 2) }}"
+                                                {{-- <a href="https://wa.me/6287765079444?text=Halo,%20Saya%20ingin%20menanyakan%20pricelist%20untuk%20.%20Namaservices:%20{{ urlencode($service->nama_services) }}.%20Deskripsi:%20{{ urlencode($service->deskripsi) }}.%20Harga:%20{{ number_format($service->price, 2) }}"
                                                    target="_blank" class="btn btn-success btn-sm">
                                                     <i class="bi bi-whatsapp"></i> WhatsApp
-                                                </a>
+                                                </a> --}}
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm">

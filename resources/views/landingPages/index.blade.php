@@ -228,22 +228,26 @@
            background-size: cover;
            background-position: center;
            background-repeat: no-repeat;
-           height: 100vh;">
-   <div class="container h-100"> <!-- Ensures the container takes full height -->
-       <div class="row align-items-center h-100"> <!-- Full height for row alignment -->
-           <div class="col-lg-6 text-start mb-4 mb-lg-0" style="margin-top: 50px;">
+           height: 100vh; min-height: 110vh;"> <!-- Increased min-height -->
+   <div class="container h-100">
+       <div class="row align-items-center h-100">
+           <div class="col-lg-6 text-start mb-4 mb-lg-0" style="margin-top: 80px;"> <!-- Increased margin-top -->
                <h1 class="fw-bold" style="font-size: 2.5rem; line-height: 1.2;">
                    KAMI MENAWARKAN<br/>LAYANAN PENGEMBANGAN WEBSITE KUSTOM<br/>LAYANAN<br/>
                    <span class="text-secondary fs-4 fw-normal">Solusi Transformasi Bisnis Digital</span>
                </h1>
-               <a href="{{ route('about.index') }}" class="btn bg-gradient-orange text-white fw-bold mt-4 rounded-4 px-4 py-2">Selengkapnya</a>
+               <a href="{{ route('about.index') }}"
+               class="btn text-white fw-bold mt-4 rounded-4 px-4 py-2"
+               style="background: linear-gradient(45deg, #FF8C00, #FFA500);">Selengkapnya</a>
+
            </div>
-           <div class="col-lg-6 text-center" style="margin-top: 50px;">
-               <img src="{{ asset('assetsFe/img/frame/logo1.png') }}" alt="Logo" class="img-fluid" style="max-width: 70%; height: auto;"> <!-- Responsive logo -->
+           <div class="col-lg-6 text-center" style="margin-top: 80px;"> <!-- Increased margin-top -->
+               <img src="{{ asset('assetsFe/img/frame/logo1.png') }}" alt="Logo" class="img-fluid" style="max-width: 70%; height: auto;">
            </div>
        </div>
    </div>
 </div>
+
 <div class="position-relative py-5" style="z-index: 1; background-image: url('assetsFe/img/frame/Frame 1000002736.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 80vh;">
     <div class="container">
         <div class="row align-items-center justify-content-between" style="margin-top: 70px;">
