@@ -12,6 +12,16 @@
 <!-- Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assetaos/dist/aos.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assetaos/dist/aos.js') }}"> --}}
+    <script src="{{ asset('assetaos/dist/aos.js') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init();
+        });
+    </script>
     <style>
         .bg-gradient-primary {
             background: linear-gradient(218deg, #FCB92D 0%, #F69332 50%, #EF6737 100%);
@@ -40,7 +50,8 @@
 <!-- Navbar -->
 @include('layouts.header2')
 <br><br><br>
-<main class="container my-5 mt-6">
+<main class="container my-5 mt-6" data-aos="fade-up"
+data-aos-duration="1000">
     <article>
         <!-- Image -->
         <img src="{{ Storage::url('images/' . $blog->image) }}"

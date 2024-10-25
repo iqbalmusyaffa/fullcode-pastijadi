@@ -267,10 +267,13 @@
             </div>
 
             <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
-                <h2 class="text-white mb-2" style="font-size: 2.5rem; font-family: Inter, sans-serif; font-weight: 600;">Our Company</h2>
-                <p class="text-white" style="font-size: 1.25rem; font-family: Inter, sans-serif; font-weight: 500; line-height: 1.65;">
-                    Berdiri sejak tahun 2018 di kota Surabaya, CV. PASTIJADI mewujudkan visi untuk menjadi pelopor dalam industri Teknologi Informasi. Dengan dedikasi yang tak tergoyahkan, kami menawarkan inovasi dan solusi terdepan yang dirancang khusus untuk memperkaya pengalaman pelanggan kami. Kami bertujuan untuk menjadi katalis perubahan, meningkatkan efisiensi dan produktivitas, serta memastikan keberlanjutan bisnis Anda di tengah transformasi digital yang pesat. Bersama CV. PASTIJADI, langkah menuju keunggulan dan kemajuan bisnis di era digital menjadi lebih mudah dan terjamin.
-                </p>
+                <p class="text-white" style="font-size: 1.25rem; font-family: Inter, sans-serif; font-weight: 500; line-height: 1.65; justify-content:center    ">
+                    Sebagai perusahaan yang bergerak di bidang pengembangan sistem dan teknologi
+                    informasi serta konsultan bisnis, kami berdedikasi untuk menjadi mitra terpercaya bagi
+                    organisasi dalam menghadapi tantangan era digital. Dengan berlandaskan inovasi,
+                    keahlian, dan pengalaman yang mendalam, kami menawarkan solusi teknologi yang
+                    dirancang khusus untuk menyederhanakan proses bisnis, meningkatkan efisiensi, dan
+                    memberikan nilai tambah yang signifikan pada setiap lini operasional.                </p>
             </div>
         </div>
     </div>
@@ -292,7 +295,7 @@
         <div class="slide active">
             <div class="row">
                 @foreach($services as $service)
-                    <div class="col-md-4 mb-4"> <!-- Adjust col-md-4 for 3 cards in a row -->
+                    <div class="col-md-4 mb-4" data-aos="zoom-in"> <!-- Adjust col-md-4 for 3 cards in a row -->
                         <div class="card">
                             <img src="{{ asset('storage/images/' . $service->image) }}"
                                  alt="{{ $service->nama_services }}"
@@ -328,7 +331,7 @@
         </div>
     </div>
 </div>
-<div style="max-width: 100%; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 63px;">
+<div style="max-width: 100%; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 63px;" data-aos="zoom-in">
     <div style="text-align: center; max-width: 800px;">
       <h2 style="color: #1C3A3F; font-size: 36px; font-family: Roboto, sans-serif; font-weight: 700; line-height: 1.2; margin-bottom: 20px;">Alasan Harus Memilih Pastijadi</h2>
       <p style="color: #1C3A3F; font-size: 18px; font-family: Roboto, sans-serif; font-weight: 300; line-height: 1.5;">Kami menyediakan layanan Digital Business Transformation Solutions</p>
@@ -336,21 +339,21 @@
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 34px; width: 100%;">
       <div style="width: 100%; max-width: 439px; background: white; box-shadow: 0px 10px 4px #1B393E; border-radius: 20px; overflow: hidden; margin-bottom: 20px;">
         <img style="width: 100%; height: auto; object-fit: cover;" src="{{ asset('assetsFe/img/frame/asset1.png') }}" alt="Placeholder image" />
-        <div style="padding: 20px; text-align: center;">
+        <div style="padding: 20px; text-align: center;" data-aos="zoom-out-up">
           <h3 style="color: black; font-size: 20px; font-family: Roboto, sans-serif; font-weight: 700; margin-bottom: 10px;">Terjamin aman dan Terpecaya</h3>
           <p style="color: black; font-size: 15px; font-family: Roboto, sans-serif; font-weight: 300; line-height: 1.5;">homespot sebagai situs properti terpercaya siap membantu menemukan hunian idaman Anda</p>
         </div>
       </div>
       <div style="width: 100%; max-width: 439px; background: white; box-shadow: 0px 10px 4px #1B393E; border-radius: 20px; overflow: hidden; margin-bottom: 20px;">
         <img style="width: 100%; height: auto; object-fit: cover;" src="{{ asset('assetsFe/img/frame/asset2.png') }}" alt="Placeholder image" />
-        <div style="padding: 20px; text-align: center;">
+        <div style="padding: 20px; text-align: center;" data-aos="zoom-out-up">
           <h3 style="color: black; font-size: 20px; font-family: Roboto, sans-serif; font-weight: 700; margin-bottom: 10px;">Relasi Terbaik</h3>
           <p style="color: black; font-size: 15px; font-family: Roboto, sans-serif; font-weight: 300; line-height: 1.5;">homespot adalah situs properti terbesar dan terpercaya yang telah melayani jutaan masyarakat Indonesia</p>
         </div>
       </div>
       <div style="width: 100%; max-width: 439px; background: white; box-shadow: 0px 10px 4px #1B393E; border-radius: 20px; overflow: hidden; margin-bottom: 20px;">
         <img style="width: 100%; height: auto; object-fit: cover;" src="{{ asset('assetsFe/img/frame/asset3.png') }}" alt="Placeholder image" />
-        <div style="padding: 20px; text-align: center;">
+        <div style="padding: 20px; text-align: center;" data-aos="zoom-out-up">
           <h3 style="color: black; font-size: 20px; font-family: Roboto, sans-serif; font-weight: 700; margin-bottom: 10px;">1jt+ Iklan Artikle</h3>
           <p style="color: black; font-size: 15px; font-family: Roboto, sans-serif; font-weight: 300; line-height: 1.5;">Dengan lebih dari 1jt properti tersedia di situs web, Rumahku dapat mencocokkan Anda dengan rumah yang diinginkan.</p>
         </div>
@@ -372,21 +375,72 @@
 </div>
 <section id="slider" class="pt-5">
     <div class="container">
-        <div class="slider">
+        <div class="slider" data-aos="zoom-out-up">
             <div class="owl-carousel">
                 <div class="slider-card">
                     <div class="d-flex justify-content-center align-items-center mb-4">
                         <img src="{{ asset('assetsFe/img/frame/asset1.png') }}" alt="">
                     </div>
-                    <h5 class="mb-0 text-center text-white"><b>HTML CSS3 Tutorials</b></h5>
-                    <p class="text-center p-4">Lorem ipsum dolor sit amet...</p>
+                    <h5 class="mb-0 text-center text-white"><b>CV. TEH KOTA INDONESIA</b></h5>
+                    <p class="text-center p-4">Cakupan Proyek: ERP Web Company
+                        Profile, ERP Franchise, ERP POS Web and
+                        Mobile Apps, ERP Finance, ERP Logistic,
+                        ERP Legal, ERP Accounting, ERP
+                        Kesekretariatan. </p>
                 </div>
                 <div class="slider-card">
                     <div class="d-flex justify-content-center align-items-center mb-4">
                         <img src="{{ asset('assetsFe/img/frame/asset1.png') }}" alt="">
                     </div>
-                    <h5 class="mb-0 text-center text-white"><b>CSS3 Tutorials</b></h5>
-                    <p class="text-center p-4">Lorem ipsum dolor sit amet...</p>
+                    <h5 class="mb-0 text-center text-white"><b>PT. ASINDO KARSA JAYA</b></h5>
+                    <p class="text-center p-4">Cakupan Proyek: ERP Web Company
+                        Profile, ERP Accounting, ERP Warehouse</p>
+                </div>
+                <div class="slider-card">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="{{ asset('assetsFe/img/frame/asset1.png') }}" alt="">
+                    </div>
+                    <h5 class="mb-0 text-center text-white"><b>NEUROLOGY DR. SAIFUL
+                        ANWAR MALANG</b></h5>
+                    <p class="text-center p-4">Cakupan Proyek: ERP Web Company
+                        Profile, ERP Learning Management
+                        System</p>
+                </div>
+                <div class="slider-card">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="{{ asset('assetsFe/img/frame/asset1.png') }}" alt="">
+                    </div>
+                    <h5 class="mb-0 text-center text-white"><b>PT. UNITED TRACTORS
+                        PANDU ENGINEERING</b></h5>
+                    <p class="text-center p-4">Cakupan Proyek: ERP E-HEALTH MOBILE
+                        APPS, ERP HRD</p>
+                </div>
+                <div class="slider-card">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="{{ asset('assetsFe/img/frame/asset1.png') }}" alt="">
+                    </div>
+                    <h5 class="mb-0 text-center text-white"><b>PT. ENVIRO TOTAL SOLUSI</b></h5>
+                    <p class="text-center p-4">Cakupan Proyek: ERP Web Company
+                        Profile, ERP Library, ERP Certification</p>
+                </div>
+                <div class="slider-card">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="{{ asset('assetsFe/img/frame/asset1.png') }}" alt="">
+                    </div>
+                    <h5 class="mb-0 text-center text-white"><b>ELMODISTA JOY SEWING
+                    </b></h5>
+                    <p class="text-center p-4">Cakupan Proyek: ERP Web Company
+                        Profile, ERP Learning Management
+                        System</p>
+                </div>
+                <div class="slider-card">
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <img src="{{ asset('assetsFe/img/frame/asset1.png') }}" alt="">
+                    </div>
+                    <h5 class="mb-0 text-center text-white"><b>THE LONDON LIVING</b></h5>
+                    <p class="text-center p-4">Cakupan Proyek: ERP Web Company
+                        Profle, ERP Scheduling Hotel
+                        </p>
                 </div>
             </div>
         </div>
@@ -432,7 +486,7 @@
     <div class="row mt-4">
         <div class="d-flex flex-wrap justify-content-center gap-4">
             @foreach ($blogs as $blog)
-            <div class="card" style="width: 270px;">
+            <div class="card" style="width: 270px;" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
                 <img src="{{ asset('storage/images/' . $blog->image) }}" class="card-img-top" alt="{{ $blog->title }}" loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title">{{ \Illuminate\Support\Str::words($blog->title, 50, '...') }}</h5>

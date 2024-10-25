@@ -15,6 +15,18 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assetaos/dist/aos.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assetaos/dist/aos.js') }}"> --}}
+    <script src="{{ asset('assetaos/dist/aos.js') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init();
+        });
+    </script>
     <style>
         .bg-gradient-custom {
             background: linear-gradient(135deg, #142C30 0%, #2A575E 100%);
@@ -136,7 +148,8 @@
         <h3 class="mb-4">Related Blogs</h3>
         <div class="row">
             @foreach ($blogs as $blog)
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-up"
+                data-aos-duration="1000">
                     <div class="card h-100">
                         <!-- Blog Image -->
                         <img src="{{ Storage::url('images/' . $blog->image) }}" class="card-img-top" alt="Blog image">
