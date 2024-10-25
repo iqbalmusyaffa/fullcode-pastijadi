@@ -1,122 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-        <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-        <title> PT Pasti Djadi</title>
-        <!--     Fonts and icons     -->
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-        <!-- Nucleo Icons -->
-        <link href="{{ asset('assetsnavbar/css/nucleo-icons.css') }}" rel="stylesheet" />
-        <link href="{{ asset('assetsnavbar/css/nnucleo-svg.css') }}" rel="stylesheet" />
-        <!-- Font Awesome Icons -->
-        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-        <!-- Material Icons -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-        <!-- CSS Files -->
-        <link id="pagestyle" href="{{ asset('assetsnavbar/css/material-kit.css?v=3.0.4') }}" rel="stylesheet" />
-        <!-- Nepcha Analytics (nepcha.com) -->
-        <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
-        <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-      </head>
-      <style>
-        /* Adding hover effect to the navbar items */
-.navbar-nav .nav-link {
-    transition: all 0.3s ease; /* Smooth transition */
-}
 
-.navbar-nav .nav-link:hover {
-    color: #ff6f61; /* Change text color on hover */
-    transform: translateY(-5px); /* Slightly lift the item on hover */
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 
-.navbar-nav .nav-link .material-icons {
-    transition: all 0.3s ease; /* Smooth transition for the icon */
-}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-.navbar-nav .nav-link:hover .material-icons {
-    color: #ff6f61; /* Change icon color on hover */
-    transform: rotate(10deg); /* Slight rotation of the icon */
-}
+    <!-- Internal Styles -->
+    <style>
+        body {
+            height: 200vh; /* Increased height for scrolling effect */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-      </style>
+        .custom-navbar {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+            padding: 1.5rem 1rem;
+            font-size: 1.2rem;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+        .navbar-transparent {
+            background: rgba(20, 44, 48, 0.5);
+        }
+
+        .navbar-solid {
+            background: linear-gradient(135deg, #142C30 0%, #2A575E 100%);
+        }
+
+        .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #FFD700;
+            transform: scale(1.1); /* Hover animation */
+        }
+
+        .form-control {
+            width: 250px;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 15px;
+        }
+
+        /* Spacer for fixed navbar */
+        .spacer {
+            height: 80px;
+        }
+
+        /* Navbar collapse styles for smooth transition */
+        .navbar-collapse {
+            transition: height 0.3s ease;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff; /* Make icon visible */
+        }
+    </style>
+</head>
+
 <body>
-    <div class="container position-sticky z-index-sticky top-0">
-        <div class="row">
-          <div class="col-12">
-            <nav class="navbar navbar-expand-lg blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
-              <div class="container-fluid px-0">
-                <a class="navbar-brand font-weight-bolder ms-sm-3" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
-                    <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" width="43" height="43">
-                </a>
-                <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon mt-2">
-                    <span class="navbar-toggler-bar bar1"></span>
-                    <span class="navbar-toggler-bar bar2"></span>
-                    <span class="navbar-toggler-bar bar3"></span>
-                  </span>
-                </button>
-                <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
-                    <ul class="navbar-nav navbar-nav-hover ms-auto">
-                        <!-- Home Link -->
-                        <li class="nav-item dropdown dropdown-hover mx-2">
-                            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" href="{{ route('home') }}">
-                                <i class="material-icons opacity-6 me-2 text-md">home</i>
-                                Home
-                            </a>
-                        </li>
+    <nav class="navbar navbar-expand-lg custom-navbar navbar-transparent fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{{ asset('assetsFe/img/logo.png') }}" alt="Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Home Link -->
+                    <li class="nav-item">
+                        <a class="nav-link ps-2 d-flex align-items-center text-white" id="dropdownMenuPages"
+                           href="{{ route('home') }}">
+                            <span class="material-icons opacity-6 me-2">home</span>
+                            Home
+                        </a>
+                    </li>
 
-                        <!-- About Link -->
-                        <li class="nav-item dropdown dropdown-hover mx-2">
-                            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuBlocks" href="{{ route('about.index') }}">
-                                <i class="material-icons opacity-6 me-2 text-md">info</i>
-                                About
-                            </a>
-                        </li>
+                    <!-- About Link -->
+                    <li class="nav-item">
+                        <a class="nav-link ps-2 d-flex align-items-center text-white" id="dropdownMenuBlocks"
+                           href="{{ route('about.index') }}">
+                            <span class="material-icons opacity-6 me-2">info</span>
+                            About
+                        </a>
+                    </li>
 
-                        <!-- Blog Link -->
-                        <li class="nav-item dropdown dropdown-hover mx-2">
-                            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" href="{{ route('blogfe.index') }}">
-                                <i class="material-icons opacity-6 me-2 text-md">rss_feed</i>
-                                Blog
-                            </a>
-                        </li>
+                    <!-- Blog Link -->
+                    <li class="nav-item">
+                        <a class="nav-link ps-2 d-flex align-items-center text-white" id="dropdownMenuDocs"
+                           href="{{ route('blogfe.index') }}">
+                            <span class="material-icons opacity-6 me-2">rss_feed</span>
+                            Blog
+                        </a>
+                    </li>
 
-                        <!-- Services Link -->
-                        <li class="nav-item dropdown dropdown-hover mx-2">
-                            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuServices" href="{{ route('servicesfe.index') }}">
-                                <i class="material-icons opacity-6 me-2 text-md">build</i>
-                                Services
-                            </a>
-                        </li>
+                    <!-- Services Link -->
+                    <li class="nav-item">
+                        <a class="nav-link ps-2 d-flex align-items-center text-white" id="dropdownMenuServices"
+                           href="{{ route('servicesfe.index') }}">
+                            <span class="material-icons opacity-6 me-2">build</span>
+                            Services
+                        </a>
+                    </li>
 
-                         <!-- Contact Link -->
-                         <li class="nav-item dropdown dropdown-hover mx-2">
-                            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuFAQ" href="{{ route('faq.index') }}">
-                                <i class="material-icons opacity-6 me-2 text-md">question_answer</i>
-                                FAQ
-                            </a>
-                        </li>
-
-                        <!-- Contact Link -->
-                        <li class="nav-item dropdown dropdown-hover mx-2">
-                            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuContact" href="{{ route('contact.index') }}">
-                                <i class="material-icons opacity-6 me-2 text-md">contacts</i>
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-              </div>
-            </nav>
-          </div>
+                    <!-- Contact Link -->
+                    <li class="nav-item">
+                        <a class="nav-link ps-2 d-flex align-items-center text-white" id="dropdownMenuContact"
+                           href="{{ route('contact.index') }}">
+                            <span class="material-icons opacity-6 me-2">contacts</span>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
+    </nav>
 
-          </div>
-        </div>
-      </div>
+    <!-- Spacer for fixed navbar -->
+    <div class="spacer"></div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onscroll = function () {
+            const navbar = document.querySelector('.custom-navbar');
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                navbar.classList.add('navbar-solid');
+                navbar.classList.remove('navbar-transparent');
+            } else {
+                navbar.classList.add('navbar-transparent');
+                navbar.classList.remove('navbar-solid');
+            }
+        };
+    </script>
 </body>
+
 </html>

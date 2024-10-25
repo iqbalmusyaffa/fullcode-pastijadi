@@ -164,7 +164,7 @@
                                 <h5 class="card-title">{{ $service->nama_services }}</h5>
                                 <p class="card-text">{{ \Illuminate\Support\Str::limit($service->deskripsi, 50) }}</p>
                                 <a href="{{ route('servicesfe.show', $service->id) }}" class="btn btn-lg text-white fw-bold" style="background: linear-gradient(100deg, #FDC02C 0%, #ED5C38 100%); border-radius: 16px; font-family: Montserrat, sans-serif;">Selengkapnya</a>
-                                <a href="https://wa.me/6287765079444?text=Halo,%20Saya%20ingin%20menanyakan%20pricelist%20untuk%20.%20Namaservices:%20{{ urlencode($service->nama_services) }}.%20Deskripsi:%20{{ urlencode($service->deskripsi) }}.%20Harga:%20{{ number_format($service->price, 2) }}" class="btn btn-success btn-lg fw-bold" style="border-radius: 16px; font-family: Montserrat, sans-serif;">
+                                <a href="https://wa.me/6285777986615?text=Halo%20Admin.%20Saya%20tertarik%20untuk%20menggunakan%20layanan%20{{ urlencode($service->nama_services) }}%20yang%20ditawarkan.%20Bisa%20berikan%20saya%20informasi%20lebih%20lanjut%20%3F%20Terima%20kasih." class="btn btn-success btn-lg fw-bold" style="border-radius: 16px; font-family: Montserrat, sans-serif;">
                                     <i class="bi bi-whatsapp"></i> WhatsApp
                                 </a>
                             </div>
